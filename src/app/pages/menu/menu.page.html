@@ -1,0 +1,787 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="light">
+      <ion-title style="font-family: 'Serif'; color: #d8d8d7"
+        >Menú de la Cafetería</ion-title
+      >
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none">
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="cafe-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Postres, Bebidas Calientes y Frías
+      </ion-item>
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="ice-cream-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Dulcería
+      </ion-item>
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="restaurant-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Quesadillas y Gorditas
+      </ion-item>
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="fast-food-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Tortas y Tacos
+      </ion-item>
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="menu-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Hamburguesas
+      </ion-item>
+      <ion-item
+        button
+        style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-icon
+          name="pizza-outline"
+          slot="start"
+          style="color: #c084fc"
+        ></ion-icon>
+        Pizza
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Botón de menú en el lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+  <ion-grid style="padding: 0 1rem"
+    ><ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        margin-top: 3rem;
+      "
+    >
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 5rem;
+        "
+      >
+        <h3>Café</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">☕ Americano</li>
+          <li style="padding: 5px 0">☕ Capuchino</li>
+          <li style="padding: 5px 0">☕ Latte</li>
+          <li style="padding: 5px 0">☕ Chai latte</li>
+          <li style="padding: 5px 0">☕ Especial de la casa</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Mediano</h3>
+            <p>$40</p>
+            <p>$55</p>
+            <p>$50</p>
+            <p>$65</p>
+            <p>$70</p>
+          </ion-col>
+          <ion-col style="text-align: center">
+            <h3>Grande</h3>
+            <p>$55</p>
+            <p>$70</p>
+            <p>$65</p>
+            <p>$80</p>
+            <p>$85</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://t3.ftcdn.net/jpg/01/31/05/30/240_F_131053005_61aYiIU3MbSJU2lU5uSBbU6qdX87rXLn.jpg"
+          alt="Café"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col> </ion-row
+  ></ion-grid>
+
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem"
+    ><ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://t3.ftcdn.net/jpg/08/21/67/26/240_F_821672624_hmzrWGnR4laqbwAB7p4VPemo0SEI0Ny5.jpg"
+          alt="Café"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Frappe</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">☕ Americano</li>
+          <li style="padding: 5px 0">🍶 Capuchino</li>
+          <li style="padding: 5px 0">🥛 Latte</li>
+          <li style="padding: 5px 0">🍵 Chai latte</li>
+          <li style="padding: 5px 0">🌟 Especial de la casa</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Mediano</h3>
+            <p>$40</p>
+            <p>$55</p>
+            <p>$50</p>
+            <p>$65</p>
+            <p>$70</p>
+          </ion-col>
+          <ion-col style="text-align: center">
+            <h3>Grande</h3>
+            <p>$55</p>
+            <p>$70</p>
+            <p>$65</p>
+            <p>$80</p>
+            <p>$85</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row></ion-grid
+  >
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem"
+    ><ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      "
+    >
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 5rem;
+        "
+      >
+        <h3>Postres</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🍰 Pastel red velvet</li>
+          <li style="padding: 5px 0">🥕 Pastel de zanahoria</li>
+          <li style="padding: 5px 0">🍏 Tarta de manzana</li>
+          <li style="padding: 5px 0">🍋 Panal de limón</li>
+          <li style="padding: 5px 0">🍒 Pie de frutos rojos</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Mediano</h3>
+            <p>$40</p>
+            <p>$55</p>
+            <p>$50</p>
+            <p>$65</p>
+            <p>$70</p>
+          </ion-col>
+          <ion-col style="text-align: center">
+            <h3>Grande</h3>
+            <p>$55</p>
+            <p>$70</p>
+            <p>$65</p>
+            <p>$80</p>
+            <p>$85</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://t3.ftcdn.net/jpg/06/96/46/08/240_F_696460813_8DhHjPE3pCGgQdtwaYZVl3hoSwE9oANw.jpg"
+          alt="Café"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col> </ion-row
+  ></ion-grid>
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem">
+    <ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://t3.ftcdn.net/jpg/03/22/89/94/240_F_322899409_VSpuVzhr6keMxcZ6FWLmkGz8jdeXhCH2.jpg"
+          alt="Dulcería"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Dulcería</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🍫 Chocolates</li>
+          <li style="padding: 5px 0">🥤 Refresco</li>
+          <li style="padding: 5px 0">💧 Agua</li>
+          <li style="padding: 5px 0">🍟 Sabritas</li>
+          <li style="padding: 5px 0">🥛 Yogurt</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Precio</h3>
+            <p>$15</p>
+            <p>$20</p>
+            <p>$30</p>
+            <p>$25</p>
+            <p>$35</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem">
+    <ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://example.com/quesadilla.jpg"
+          alt="Quesadillas y Gorditas"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Quesadillas y Gorditas</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🫓 Quesadilla</li>
+          <li style="padding: 5px 0">🥙 Gordita</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Precio</h3>
+            <p>$20</p>
+            <p>$25</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem">
+    <ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://example.com/torta.jpg"
+          alt="Tortas y Tacos"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Tortas y Tacos</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🥪 Torta</li>
+          <li style="padding: 5px 0">🌮 Taco</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Precio</h3>
+            <p>$30</p>
+            <p>$15</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem">
+    <ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://example.com/hamburguesa.jpg"
+          alt="Hamburguesas"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Hamburguesas</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🍔 Hamburguesa Clásica</li>
+          <li style="padding: 5px 0">🍔 Hamburguesa con Queso</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Precio</h3>
+            <p>$50</p>
+            <p>$55</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="display: flex; justify-content: center">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 20px 0;
+      "
+    >
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+      <div style="flex-grow: 1; height: 2px; background-color: #d2b48c"></div>
+      <div
+        style="
+          width: 12px;
+          height: 12px;
+          border: 2px solid #d2b48c;
+          border-radius: 50%;
+          background-color: #fff;
+        "
+      ></div>
+    </div>
+  </div>
+  <ion-grid style="padding: 0 1rem">
+    <ion-row
+      style="
+        background-color: #f5efe8;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      "
+    >
+      <ion-col size="12" size-sm="6" size-md="3" style="text-align: center">
+        <img
+          src="https://example.com/pizza.jpg"
+          alt="Pizza"
+          style="width: 80%; border-radius: 10px"
+        />
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="
+          font-family: 'Serif';
+          color: #5a4032;
+          text-align: justify;
+          margin-left: 3rem;
+        "
+      >
+        <h3>Pizza</h3>
+        <ul style="list-style-type: none; padding: 0">
+          <li style="padding: 5px 0">🍕 Pizza Individual</li>
+          <li style="padding: 5px 0">🍕 Pizza Grande</li>
+        </ul>
+      </ion-col>
+
+      <ion-col
+        size="12"
+        size-sm="6"
+        size-md="3"
+        style="font-family: 'Serif'; color: #5a4032"
+      >
+        <ion-row>
+          <ion-col style="text-align: center">
+            <h3>Precio</h3>
+            <p>$70</p>
+            <p>$120</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
