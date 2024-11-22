@@ -1,38 +1,354 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="light"> </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none" style="padding: 0.5rem">
+      <ion-item-divider
+        button
+        style="
+          --background: #d8d8d7;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 2rem;
+          border-radius: 0.5rem;
+          margin-top: 3rem;
+        "
+      >
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem"
+            >User Nº 1</ion-text
+          >
+          <br />
+          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
+        </ion-label>
+
+        <ion-icon
+          name="person-outline"
+          slot="end"
+          style="font-size: 24px; color: black"
+        ></ion-icon>
+      </ion-item-divider>
+      <ion-item-divider
+        button
+        style="
+          --background: #d8d8d7;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 2rem;
+          border-radius: 0.5rem;
+          margin-top: 3rem;
+        "
+        ><ion-grid
+          style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
+        >
+          <ion-row>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon
+                style="color: black; font-size: 24px"
+                name="settings-outline"
+              ></ion-icon>
+            </ion-col>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon
+                style="color: black; font-size: 24px"
+                name="contrast-outline"
+              ></ion-icon>
+            </ion-col>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon
+                style="color: black; font-size: 24px"
+                name="wallet-outline"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+      <!-- Secciones -->
+      <ion-item-divider
+        style="
+          font-family: 'Serif';
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: black;
+          text-align: center;
+          --background: none;
+          margin: 2rem 0 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-label>Secciones</ion-label>
+      </ion-item-divider>
+      <!-- Sección Pizza -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="pizza-outline"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <a href="/pizzas" style="text-decoration: none; color: inherit">
+            <ion-text style="font-weight: bold; font-size: 1.2rem">
+              Pizza
+            </ion-text>
+          </a>
+        </ion-label>
+      </ion-item>
+
+      <!-- Sección Gorditas, Quesadillas y Platillos -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="restaurant-outline"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem">
+            Gorditas, Quesadillas y Platillos
+          </ion-text>
+        </ion-label>
+      </ion-item>
+
+      <!-- Sección Bebidas y Postres -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="ice-cream-outline"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem">
+            Bebidas y Postres
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <!-- Sección Tacos y tortas -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="fast-food-outline"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem">
+            Tacos y Tortas
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <!-- Hmaburgesas -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="fast-food-sharp"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem">
+            Hamburguesas
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <!-- Dulces -->
+      <ion-item
+        button
+        style="
+          --background: none;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-icon
+          slot="start"
+          name="happy-outline"
+          style="font-size: 1.5rem; color: #5a4032"
+        ></ion-icon>
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem">
+            Dulceria
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-col size="auto">
-      <img
-        src="data:image/jpeg;base64,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"
-        alt="Uni Express Logo"
-        style="height: 4rem; vertical-align: middle; margin: 0.2rem"
-      />
-    </ion-col>
-    <ion-title> .</ion-title>
+  <ion-toolbar class="custom-navbar">
+    <!-- Botón de menú en el lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first">
+        <ion-icon
+          class="icono-menu"
+          slot="icon-only"
+          name="menu-outline"
+        ></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-content id="main-content" [fullscreen]="true" class="ion-padding">
+  <ion-searchbar
+    placeholder="Buscar..."
+    style="--background: #ffffff; border-radius: 2rem; --color: #5a4032"
+  ></ion-searchbar>
+  <ion-grid>
+    <ion-row class="banner-container" align-items-center>
+      <!-- Imagen -->
+      <ion-col size-xs="12" size-md="6" size-lg="6" class="image-col">
+        <img
+          src="assets/img/hamburgesa.png"
+          alt="Hamburguesa"
+          class="burger-image"
+        />
+      </ion-col>
 
-<div id="container" style="margin-top: 3rem">
-  <ion-row>
-    <ion-col>
-      <strong>Sr.Macondo</strong>
-      <p>
-        Desayunos y meriendas.
-        <br />
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://ionicframework.com/docs/components"
-          >UI Components</a
-        >
-      </p>
-    </ion-col>
-  </ion-row>
-</div>
+      <!-- Contenido -->
+      <ion-col size-xs="12" size-md="6" size-lg="6" class="content-col">
+        <div class="content">
+          <h2>MIRA NUESTRO<br />NUEVO CONTENIDO</h2>
+          <button class="cta-button">Click Aquí</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="menu-items">
+      <ion-col size="3" class="menu-item">
+        <img src="assets/img/pizza.png" alt="Pizza" />
+        <p>Pizza</p>
+      </ion-col>
+      <ion-col size="3" class="menu-item">
+        <img src="assets/img/menu-de-snacks.png" alt="Botanas" />
+        <p>Botanas</p>
+      </ion-col>
+      <ion-col size="3" class="menu-item">
+        <img src="assets/img/taco.png" alt="Tacos" />
+        <p>Tacos</p>
+      </ion-col>
+      <ion-col size="3" class="menu-item">
+        <img src="assets/img/hamburguesa.png" alt="Hamburguesa" />
+        <p>Hamburguesa</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <!-- Card 1 -->
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <div class="card">
+          <h2>Pide y come rápido</h2>
+          <div class="image-container">
+            <img src="assets/img/Pizzas.png" alt="Pizza" />
+            <div class="overlay">
+              <p>Listo Para Comer</p>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- Card 2 -->
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <div class="card">
+          <h2>Buen sazón</h2>
+          <div class="image-container">
+            <img src="assets/img/Tacos.png" alt="Tacos" />
+            <div class="overlay">
+              <p>Prueba comida con buen sazón</p>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- Card 3 -->
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <div class="card">
+          <h2>Compras Anteriores</h2>
+          <div class="image-container">
+            <img src="assets/img/Quesadillas.png" alt="Quesadillas" />
+            <div class="overlay">
+              <p>Comida que ya has probado</p>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-grid>
+      <ion-row>
+        <!-- Tienda -->
+        <ion-col class="footer-item" size="4">
+          <a href="/tienda" style="text-decoration: none; color: inherit">
+            <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
+            <p>TIENDA</p>
+          </a>
+        </ion-col>
+
+        <!-- Carrito -->
+        <ion-col class="footer-item" size="4">
+          <a href="/carrito" style="text-decoration: none; color: inherit">
+            <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
+            <p>CARRITO</p>
+          </a>
+        </ion-col>
+
+        <!-- Perfil -->
+        <ion-col class="footer-item" size="4">
+          <a href="/perfil" style="text-decoration: none; color: inherit">
+            <ion-icon name="person-outline" class="footer-icon"></ion-icon>
+            <p>PERFIL</p>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
