@@ -233,94 +233,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="main-content" [fullscreen]="true" class="ion-padding">
-  <ion-searchbar
-    placeholder="Buscar..."
-    style="--background: #ffffff; border-radius: 2rem; --color: #5a4032"
-  ></ion-searchbar>
-  <ion-grid>
-    <ion-row class="banner-container" align-items-center>
-      <!-- Imagen -->
-      <ion-col size-xs="12" size-md="6" size-lg="6" class="image-col">
-        <img
-          src="assets/img/hamburgesa.png"
-          alt="Hamburguesa"
-          class="burger-image"
-        />
-      </ion-col>
-
-      <!-- Contenido -->
-      <ion-col size-xs="12" size-md="6" size-lg="6" class="content-col">
-        <div class="content">
-          <h2>MIRA NUESTRO<br />NUEVO CONTENIDO</h2>
-          <button class="cta-button">Click Aquí</button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row class="menu-items">
-      <ion-col size="3" class="menu-item">
-        <img src="assets/img/pizza.png" alt="Pizza" />
-        <p>Pizza</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item">
-        <img src="assets/img/menu-de-snacks.png" alt="Botanas" />
-        <p>Botanas</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item">
-        <img src="assets/img/taco.png" alt="Tacos" />
-        <p>Tacos</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item">
-        <img src="assets/img/hamburguesa.png" alt="Hamburguesa" />
-        <p>Hamburguesa</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content id="main-content" [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <!-- Card 1 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Pide y come rápido</h2>
-          <div class="image-container">
-            <img src="assets/img/Pizzas.png" alt="Pizza" />
-            <div class="overlay">
-              <p>Listo Para Comer</p>
-            </div>
-          </div>
-        </div>
-      </ion-col>
-
-      <!-- Card 2 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Buen sazón</h2>
-          <div class="image-container">
-            <img src="assets/img/Tacos.png" alt="Tacos" />
-            <div class="overlay">
-              <p>Prueba comida con buen sazón</p>
-            </div>
-          </div>
-        </div>
-      </ion-col>
-
-      <!-- Card 3 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Compras Anteriores</h2>
-          <div class="image-container">
-            <img src="assets/img/Quesadillas.png" alt="Quesadillas" />
-            <div class="overlay">
-              <p>Comida que ya has probado</p>
-            </div>
-          </div>
-        </div>
+      <ion-col
+        *ngFor="let pizza of pizzas"
+        size-xs="6"
+        size-sm="6"
+        size-md="6"
+        size-lg="3"
+        size-xl="3"
+      >
+        <ion-card>
+          <img class="image-container" [src]="pizza.image" [alt]="pizza.name" />
+          <ion-card-header>
+            <ion-card-title>{{ pizza.name }} ${{ pizza.price }}</ion-card-title>
+            <ion-button class="Agregar" (click)="presentAlert(pizza)"
+              >Agregar</ion-button
+            >
+          </ion-card-header>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar class="custom-footer">
     <ion-grid>
