@@ -1,0 +1,63 @@
+#first_screen {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+#first_screen__background {
+    --background: none; /* Elimina el fondo predeterminado de Ionic */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/first-screen/pizza.webp'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100%; /* Asegura que el fondo cubra toda la pantalla */
+    width: 45%;
+}
+
+#first_screen__background__white_figure {
+    width: 35%;
+    height: auto;
+    padding: 2%;
+    border-radius: 500px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#first_screen__background__white_figura__logo{
+
+}
+
+#first_screen__background_white {
+    background-color: white;
+    display: block;
+    width: 55%;
+    height: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    #first_screen__white_figure {
+        position: absolute; /* Permite posicionar la figura encima de la imagen */
+        top: -5%; /* Centra verticalmente */
+        left: 50%; /* Centra horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta la figura para que esté centrada */
+        width: 120%; /* Ancho de la figura, se adapta de forma responsiva */
+        height: 60%; /* Altura de la figura, también ajustable */
+        background-color: white; /* Color blanco de la figura */
+        border-radius: 450px; /* Esquinas redondeadas, opcional */
+    }
+    #first_screen__background__white_figure {
+        display:none;
+    }
+    #first_screen__background{
+        width: 100%;
+    }
+}

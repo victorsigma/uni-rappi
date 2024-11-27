@@ -19,8 +19,10 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   },
-
-
+  {
+    path: 'first-screen',
+    loadChildren: () => import('./pages/first-screen/first-screen.module').then( m => m.FirstScreenPageModule)
+  }
 ];
 
 @NgModule({
