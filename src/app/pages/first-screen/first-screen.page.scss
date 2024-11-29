@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('/assets/images/first-screen/pizza.webp'); /* Ruta de la imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/images/first-screen/pizza.webp'); /* Ruta de la imagen */
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -30,18 +30,82 @@
     justify-content: center;
 }
 
-#first_screen__background__white_figura__logo{
-
-}
-
 #first_screen__background_white {
     background-color: white;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
     width: 55%;
     height: 100%;
 }
 
+#first_screen__background__texto {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
 
+    width: 80%;
+    color: white;
+}
+
+#first_screen__background__texto h2 {
+    font-size: clamp(2rem, 3vw, 6rem);
+    font-weight: 800;
+}
+
+#first_screen__background__texto h5 {
+    font-size: clamp(1.5rem, 1.25vw, 5rem);
+    font-weight: 500;
+}
+
+#first_screen__background_white__texto {
+    color: black;
+    margin-top: 5rem;
+}
+
+#first_screen__background_white__texto h2 {
+    font-size: clamp(2rem, 2.5vw, 6rem);
+    font-weight: 700;
+}
+
+#first_screen__background_white__botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    margin-top: 3.5rem;
+}
+
+#first_screen__background_white__botones ion-button {
+    margin-top: .75rem;
+}
+
+.button-ingresar {
+    --color: white;
+    --color-activated: white;
+    --color-focused: white;
+    --color-hover: white;
+    --background: #119747;
+    --padding-end: 2rem;
+    --padding-start: 2rem;
+    z-index: 3;
+}
+
+.button-registrarse {
+    --color: white;
+    --color-activated: white;
+    --color-focused: white;
+    --color-hover: white;
+    --background: #E86411;
+}
+
+#first_screen__background_white__botones__pantalla_pequenia {
+    display: none;
+}
 
 @media (max-width: 768px) {
     #first_screen__white_figure {
@@ -54,10 +118,38 @@
         background-color: white; /* Color blanco de la figura */
         border-radius: 450px; /* Esquinas redondeadas, opcional */
     }
-    #first_screen__background__white_figure {
-        display:none;
+    #first_screen__background {
+        justify-content: flex-start;
     }
+
+    #first_screen__background__white_figure {
+        margin-top: 2.5rem;
+    }
+
     #first_screen__background{
         width: 100%;
     }
+
+    #first_screen__background__texto {
+        align-items: center;
+    }
+
+    #first_screen__background__white_figure {
+        width: 40%;
+    }
+
+    #first_screen__background_white__botones__pantalla_pequenia{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+        margin-top: 4rem;
+    }
+
+    #first_screen__background_white {
+        display: none;
+    }
+
 }
