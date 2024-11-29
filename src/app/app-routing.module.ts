@@ -31,8 +31,18 @@ const routes: Routes = [
     path: 'tienda',
     loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule)
   },
-
-
+  {
+    path: 'first-screen',
+    loadChildren: () => import('./pages/first-screen/first-screen.module').then( m => m.FirstScreenPageModule)
+  },
+  {
+    path: 'iniciar-sesion',
+    loadChildren: () => import('./pages/iniciar-sesion/iniciar-sesion.module').then( m => m.IniciarSesionPageModule)
+  },
+  {
+    path: 'registrar-usuario',
+    loadChildren: () => import('./pages/registrar-usuario/registrar-usuario.module').then( m => m.RegistrarUsuarioPageModule)
+  }
 
 ];
 
