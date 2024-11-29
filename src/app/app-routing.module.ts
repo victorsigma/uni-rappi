@@ -50,9 +50,8 @@ const routes: Routes = [
   {
     path: 'dulceria',
     loadChildren: () => import('./pages/dulceria/dulceria.module').then( m => m.DulceriaPageModule)
-  }
-
-,{
+  },
+  {
     path: 'first-screen',
     loadChildren: () => import('./pages/first-screen/first-screen.module').then( m => m.FirstScreenPageModule)
   },
