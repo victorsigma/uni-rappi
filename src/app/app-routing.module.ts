@@ -31,6 +31,27 @@ const routes: Routes = [
     path: 'tienda',
     loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule)
   },
+  {
+    path: 'quesadillas',
+    loadChildren: () => import('./pages/quesadillas/quesadillas.module').then( m => m.QuesadillasPageModule)
+  },
+  {
+    path: 'postres',
+    loadChildren: () => import('./pages/postres/postres.module').then( m => m.PostresPageModule)
+  },
+  {
+    path: 'tacos',
+    loadChildren: () => import('./pages/tacos/tacos.module').then( m => m.TacosPageModule)
+  },
+  {
+    path: 'hamburguesas',
+    loadChildren: () => import('./pages/hamburguesas/hamburguesas.module').then( m => m.HamburguesasPageModule)
+  },
+  {
+    path: 'dulceria',
+    loadChildren: () => import('./pages/dulceria/dulceria.module').then( m => m.DulceriaPageModule)
+  }
+
 
 
 

@@ -1,0 +1,111 @@
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+/**/
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+}
+
+
+/*Css footer*/
+.custom-footer {
+    --background: #1BC8AD;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-icon {
+    font-size: 2rem;
+    color: rgb(8, 8, 8);
+    margin-bottom: 5px;
+}
+
+.footer-item p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+.list-md {
+    background-color: #d8d8d7;
+}
+
+.image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .image-container {
+        width: 100%;
+        height: 100px;
+    }
+}

@@ -55,45 +55,43 @@ export class PizzasPage implements OnInit {
 
   constructor(private alertController: AlertController) {}
 
-async presentAlert(pizza: { name: string; price: number; image: string }) {
-  const alert = await this.alertController.create({
-    header: `Pizza ${pizza.name}`,
-    subHeader: `Precio: $${pizza.price}`,
-    message: '¿Cuántas unidades deseas agregar?',
-    inputs: [
-      {
-        name: 'quantity',
-        type: 'number',
-        placeholder: 'Cantidad',
-        min: 1, // Mínimo 1 para que no
-        value: 1 // Valor por defecto
-      },
-    ],
-    buttons: [
-      {
-        text: 'Cancelar',
-        role: 'cancel',
-        handler: () => {
-          console.log('El usuario canceló');
+  async presentAlert(pizza: { name: string; price: number; image: string }) {
+    const alert = await this.alertController.create({
+      header: `Pizza ${pizza.name}`,
+      subHeader: `Precio: $${pizza.price}`,
+      message: '¿Cuántas unidades deseas agregar?',
+      inputs: [
+        {
+          name: 'quantity',
+          type: 'number',
+          placeholder: 'Cantidad',
+          min: 1, // Mínimo 1 para que no
+          value: 1 // Valor por defecto
         },
-      },
-      {
-        text: 'Agregar',
-        handler: (data) => {
-          const quantity = data.quantity;
-          if (quantity > 0) {
-            console.log(`Se agregaron ${quantity} unidades de la pizza ${pizza.name}`);
-          } else {
-            console.log('Cantidad inválida');
-          }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('El usuario canceló');
+          },
         },
-      },
-    ],
-  });
+        {
+          text: 'Agregar',
+          handler: (data) => {
+            const quantity = data.quantity;
+            if (quantity > 0) {
+              console.log(`Se agregaron ${quantity} unidades de la pizza ${pizza.name}`);
+            } else {
+              console.log('Cantidad inválida');
+            }
+          },
+        },
+      ],
+    });
 
-  await alert.present();
-}
-
-
+    await alert.present();
+  }
 
 }
