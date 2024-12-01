@@ -320,12 +320,19 @@
 
       <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="8" size-xl="8">
         <ion-card>
-          <ion-card-header>
-            <ion-card-title>Información de tu cuenta</ion-card-title>
-          </ion-card-header>
-
           <ion-row *ngIf="selectedOption === 'informacion'">
             <!-- La información personal -->
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            >
+              <ion-card-header>
+                <ion-card-title>Información de tu cuenta</ion-card-title>
+              </ion-card-header>
+            </ion-col>
             <ion-col
               size-xs="12"
               size-sm="6"
@@ -442,23 +449,6 @@
                 </ion-select>
               </ion-card-content>
             </ion-col>
-          </ion-row>
-
-          <ion-row *ngIf="selectedOption === 'pagos'">
-            <!--Pagos -->
-            <ion-col size-xs="12">
-              <ion-card-content> Pagos realizados </ion-card-content>
-            </ion-col>
-          </ion-row>
-
-          <ion-row *ngIf="selectedOption === 'ordenes'">
-            <!-- Historial de órdenes -->
-            <ion-col size-xs="12">
-              <ion-card-content> Mis últimos pedidos! </ion-card-content>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
             <ion-col
               size-xs="12"
               size-sm="12"
@@ -469,6 +459,83 @@
               <ion-button class="btn-sesion">Cerrar sesión</ion-button>
               <ion-button class="btn-sesion">Guardar datos</ion-button>
               <ion-button class="btn-sesion">Eliminar cuenta</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="selectedOption === 'pagos'">
+            <!--Pagos -->
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            >
+              <ion-card-header>
+                <ion-card-title>Métodos de pago</ion-card-title>
+              </ion-card-header>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="6"
+            >
+              <ion-card class="card-pagos">
+                <ion-card-content>
+                  <ion-icon
+                    name="cash"
+                    slot="start"
+                    style="
+                      font-size: 40px;
+                      margin-right: 8px;
+                      color: rgba(29, 231, 66, 0.859);
+                    "
+                  ></ion-icon>
+                  <ion-card-title>Efectivo </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="6"
+            >
+              <ion-card class="card-pagos">
+                <ion-card-content>
+                  <ion-icon
+                    name="arrow-down-circle"
+                    slot="start"
+                    style="
+                      font-size: 40px;
+                      margin-right: 8px;
+                      color: rgba(29, 231, 66, 0.859);
+                    "
+                  ></ion-icon>
+                  <ion-card-title>Tranferencia bancaria </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="selectedOption === 'ordenes'">
+            <!-- Historial de órdenes -->
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            >
+              <ion-card-header>
+                <ion-card-title>Ultimos pedidos</ion-card-title>
+              </ion-card-header>
+            </ion-col>
+            <ion-col size-xs="12">
+              <ion-card-content> No tienes ningún pedido </ion-card-content>
             </ion-col>
           </ion-row>
         </ion-card>
