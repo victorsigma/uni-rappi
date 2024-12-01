@@ -243,28 +243,43 @@
 </ion-header>
 
 <ion-content id="main-content" [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col
-        *ngFor="let pizza of pizzas"
-        size-xs="6"
-        size-sm="6"
-        size-md="6"
-        size-lg="3"
-        size-xl="3"
-      >
-        <ion-card>
-          <img class="image-container" [src]="pizza.image" [alt]="pizza.name" />
-          <ion-card-header>
-            <ion-card-title>{{ pizza.name }} ${{ pizza.price }}</ion-card-title>
-            <ion-button class="Agregar" (click)="presentAlert(pizza)"
-              >Agregar</ion-button
-            >
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-row>
+    <ion-col
+      *ngFor="let item of menuprincipal"
+      size-xs="6"
+      size-sm="6"
+      size-md="6"
+      size-lg="4"
+      size-xl="4"
+    >
+      <ion-card>
+        <img class="image-container" [src]="item.image" [alt]="item.name" />
+        <ion-card-header>
+          <ion-card-title>{{ item.name }}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-item-divider> </ion-item-divider>
+  <ion-row>
+    <ion-col
+      *ngFor="let item of menu"
+      size-xs="6"
+      size-sm="6"
+      size-md="6"
+      size-lg="3"
+      size-xl="3"
+    >
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ item.name }} ${{ item.price }}</ion-card-title>
+          <ion-button class="Agregar" (click)="presentAlert(item)"
+            >Agregar</ion-button
+          >
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
 
 <ion-footer>
