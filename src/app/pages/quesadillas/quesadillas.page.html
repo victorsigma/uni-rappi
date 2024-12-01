@@ -227,7 +227,6 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-
 <ion-header [translucent]="true">
   <ion-toolbar class="custom-navbar">
     <!-- Botón de menú en el lado izquierdo -->
@@ -247,7 +246,25 @@
   <ion-grid>
     <ion-row>
       <ion-col
-        *ngFor="let pizza of pizzas"
+        *ngFor="let item of menu"
+        size-xs="6"
+        size-sm="6"
+        size-md="6"
+        size-lg="4"
+        size-xl="4"
+      >
+        <ion-card>
+          <img class="image-container" [src]="item.image" [alt]="item.name" />
+          <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-item-divider> </ion-item-divider>
+    <ion-row>
+      <ion-col
+        *ngFor="let quesadilla of quesadillas"
         size-xs="6"
         size-sm="6"
         size-md="6"
@@ -255,10 +272,11 @@
         size-xl="3"
       >
         <ion-card>
-          <img class="image-container" [src]="pizza.image" [alt]="pizza.name" />
           <ion-card-header>
-            <ion-card-title>{{ pizza.name }} ${{ pizza.price }}</ion-card-title>
-            <ion-button class="Agregar" (click)="presentAlert(pizza)"
+            <ion-card-title
+              >{{ quesadilla.name }} ${{ quesadilla.price }}</ion-card-title
+            >
+            <ion-button class="Agregar" (click)="presentAlert(quesadilla)"
               >Agregar</ion-button
             >
           </ion-card-header>
