@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'carrito',
-    loadChildren: () => import('./pages/carrito/carrito.module').then( m => m.CarritoPageModule)
-  },
-  {
     path: 'tienda',
     loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule)
   },
@@ -62,8 +58,9 @@ const routes: Routes = [
   {
     path: 'registrar-usuario',
     loadChildren: () => import('./pages/registrar-usuario/registrar-usuario.module').then( m => m.RegistrarUsuarioPageModule)
-    ,
-  {path: 'plantilla-tienda',
+  },
+  {
+    path: 'plantilla-tienda',
     loadChildren: () => import('./pages/plantilla-tienda/plantilla-tienda.module').then( m => m.PlantillaTiendaPageModule)
   }
 
