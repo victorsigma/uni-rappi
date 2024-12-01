@@ -1,0 +1,43 @@
+.container {
+    margin: 0 auto; /* Centra el contenido */
+    max-width: 1600px; /* Limita el ancho máximo */
+    padding: 0 16px; /* Márgenes laterales */
+}
+
+.custom-modal {
+    --height: 0%;
+    --border-radius: 20px;
+    --background: white;
+}
+
+.full-modal {
+    --width: 100%;
+    --height: 100%;
+    --border-radius: 0;
+    --margin-top: 0;
+    --margin-bottom: 0;
+    --max-width: 100%;
+    --max-height: 100%;
+}
+
+.ion-page {
+    height: 0%;
+}
+
+#buscador {
+    margin-top: 1%;
+}
+
+#icono_carrito {
+    margin-right: 2%;
+}
+
+#tienda__titulo {
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    font-weight: 600;
+    margin-left: 0.5%;
+}
+
+.tienda__productos ion-col ion-card {
+    cursor: pointer;
+}

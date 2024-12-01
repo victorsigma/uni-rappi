@@ -62,7 +62,11 @@ const routes: Routes = [
   {
     path: 'registrar-usuario',
     loadChildren: () => import('./pages/registrar-usuario/registrar-usuario.module').then( m => m.RegistrarUsuarioPageModule)
+    ,
+  {path: 'plantilla-tienda',
+    loadChildren: () => import('./pages/plantilla-tienda/plantilla-tienda.module').then( m => m.PlantillaTiendaPageModule)
   }
+
 
 ];
 

@@ -1,0 +1,84 @@
+.container {
+    margin: 5% 7%;
+}
+
+#product__text_price {
+    color: #005DCF;
+}
+
+#product {
+    display: flex;
+    align-items: center;
+}
+
+#product__content_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product__content_image__image {
+    height: auto;
+    width: 80%;
+}
+
+#product__content__description__title{
+    color: black;
+    font-weight: 600;
+}
+
+#product__content_text, #product__content__description {
+    margin: 2% 10%;
+}
+
+#product__content__description__text{
+    margin-top: 2%;
+}
+
+#header {
+    margin-left: 2%;
+}
+
+#boton_salir {
+    margin: 0;
+    padding: 0;
+}
+
+#product__content__buttons__contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-registrarse {
+    --color: white;
+    --color-activated: white;
+    --color-focused: white;
+    --color-hover: white;
+    --background: #28BA62;
+    box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+}
+
+#product__content__buttons__add ion-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#product__content__buttons__add {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    border-radius: 50rem;
+    box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+
+}
