@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -6,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registrar-usuario.page.scss'],
 })
 export class RegistrarUsuarioPage implements OnInit {
-  contrasena: string = "";
+   user = {
+    username: '',
+    email: '',
+    fullName: '',
+    controlNumber: '',
+    group: '',
+    password: '',
+    role: 'user',
+  };
   mostrarContrasena: boolean = false;
   repetirContrasena: string = "";
   mostrarRepetirContrasena: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService, private navCtrl: NavController) { }
+
+  ngOnInit() {
+  }
 
   alternarContrasena() {
     console.log(this.mostrarContrasena);
@@ -23,7 +36,15 @@ export class RegistrarUsuarioPage implements OnInit {
     this.mostrarContrasena = !this.mostrarContrasena; // Alterna el valor entre true y false
   }
   
-  ngOnInit() {
+  register() {
+    this.authService.register(this.user).subscribe({
+      next: (response) => {
+        console.log('Usuario registrado exitosamente:', response);
+        this.navCtrl.navigateForward('/iniciar-sesion');
+      },
+      error: (err) => {
+        console.error('Error al registrar usuario:', err);
+      },
+    });
   }
-
 }
