@@ -28,12 +28,6 @@ const routes: Routes = [
     data: { roles: ['user', 'admin', 'vendedor']}
   },
   {
-    path: 'carrito',
-    loadChildren: () => import('./pages/carrito/carrito.module').then( m => m.CarritoPageModule),
-    canActivate: [authGuard],
-    data: { roles: ['user', 'admin', 'vendedor']}
-  },
-  {
     path: 'tienda',
     loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule),
     canActivate: [authGuard],
@@ -85,7 +79,9 @@ const routes: Routes = [
   },
   {
     path: 'plantilla-tienda',
-    loadChildren: () => import('./pages/plantilla-tienda/plantilla-tienda.module').then( m => m.PlantillaTiendaPageModule)
+    loadChildren: () => import('./pages/plantilla-tienda/plantilla-tienda.module').then( m => m.PlantillaTiendaPageModule),
+    canActivate: [authGuard],
+    data: { roles: ['user', 'admin', 'vendedor']}
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
   
