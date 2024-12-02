@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(45deg, #0FCAAD, #016959);
-    height: 100%;
+    height: 100dvh;
     width: 40%;
 }
 
@@ -20,10 +20,18 @@
     flex-direction: column;
     height: 100%;
     width: 60%;
+    overflow: auto; /* Desplazamiento automático */
+    -ms-overflow-style: none; /* IE y Edge: Oculta la barra */
+    scrollbar-width: none; /* Firefox: Oculta la barra */
 }
 
+#registro__formulario::-webkit-scrollbar {
+    display: none; /* Chrome, Safari: Oculta la barra */
+}
+
+
 #registro__formulario__titulo {
-    margin-top: 7.8rem;
+    margin-top: 7vh;
     font-size: clamp(2rem, 2.90vw, 6rem);
     font-weight: 600;
 }
@@ -33,7 +41,7 @@
 }
 
 #registro__formulario__form {
-    margin-top: 2.5rem;
+    margin-top: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,15 +99,21 @@ ion-item {
         display: none;
     }
 
+    #registro__fondo_verde__ayuda {
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        z-index: 100;
+    }
+
     #registro__fondo_verde__registro__formulario {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         background-color: white;
-        margin-top: 14%;
         width: 100%;
-        height: 100%;
         z-index: 5;
     }
 
@@ -125,10 +139,16 @@ ion-item {
         z-index: 1;
     }
 
+    #registro__fondo_verde__figura {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
     #registro__fondo_verde__figura__logo {
-        margin-top: 1.5rem;
         height: 45vw;
-        margin-bottom: 2rem;
     }
 
     #registro__fondo_verde__registro__formulario__form ion-input {
@@ -152,7 +172,7 @@ ion-item {
     
     #registro__fondo_verde__registro__formulario__titulo {
         z-index: 5;
-        margin-top: 10vh;
+        margin-top: 10%;
     }
 
     #registro__fondo_verde__registro__formulario__form {
@@ -160,6 +180,7 @@ ion-item {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 10%;
     }
 
     #registro__fondo_verde__registro__formulario__form__contrasenia {
