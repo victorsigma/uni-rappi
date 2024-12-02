@@ -41,7 +41,7 @@ export class PlantillaTiendaPage implements OnInit {
       handle: true, // Activa el control para arrastrar el modal
       backdropDismiss: true,  // Permite cerrar el modal al hacer clic fuera
       componentProps: {
-        pizza: pizza // Pasa el objeto pizza al modal
+        product: pizza // Pasa el objeto pizza al modal
       }
     });
 
@@ -54,9 +54,9 @@ export class PlantillaTiendaPage implements OnInit {
       component: CarritoComponent, // No especificamos un componente aquí
       cssClass: 'full-modal', // Estilos personalizados (opcional)
       backdropDismiss: true,  // Permitir cerrar al hacer clic fuera
-      componentProps: {
-        // Puedes pasar propiedades si es necesario
-      }
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
     });
 
     await modal.present();
