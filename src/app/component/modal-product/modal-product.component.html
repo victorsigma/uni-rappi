@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ pizza?.name }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()"
+        ><ion-icon name="chevron-back-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div id="product__content">
+      <div id="product__content_image">
+        <img
+          id="product__content_image__image"
+          src="{{ pizza.imagen }}"
+          alt="{{ pizza.productDescription }}"
+        />
+      </div>
+      <div id="product__content_text">
+        <h2>{{ pizza?.productname }}</h2>
+        <p id="product__text_price">$ {{ pizza?.price }}.00</p>
+      </div>
+    </div>
+
+    <div id="product__content__description">
+      <h5 id="product__content__description__title">Descripción</h5>
+      <p id="product__content__description__text">
+        {{ pizza?.productDescription }}
+      </p>
+
+      <div id="product__content__buttons">
+        <ion-grid>
+          <ion-row id="product__content__buttons__contenedor">
+            <ion-col>
+              <div id="product__content__buttons__add">
+                <ion-button fill="clear"
+                  ><ion-icon name="remove-outline"></ion-icon></ion-button>
+                <p>1</p>
+                <ion-button fill="clear"
+                  ><ion-icon name="add-outline"></ion-icon></ion-button>
+              </div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col
+              ><ion-button class="button-registrarse"
+                >Registrar</ion-button
+              ></ion-col
+            >
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+</ion-content>

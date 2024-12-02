@@ -1,0 +1,238 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="registro">
+    <div id="registro__fondo_verde">
+      <div id="registro__fondo_verde__figura">
+        <img
+          id="registro__fondo_verde__figura__logo"
+          src="assets/images/logos/Macondo-logo.png"
+          alt="Logo Sr.Macondo"
+        />
+      </div>
+    </div>
+
+    <div id="registro__fondo_verde__registro__formulario">
+      <!-- <div id="adorno_ola">
+        <svg
+          id="adorno_ola_blanco"
+          viewBox="0 0 412 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M-26 56.6499C-26 56.6499 -1.70396 -7.07474 64.6849 0.649464C131.074 8.37367 155.113 81.7536 222.667 83.6847C290.221 85.6157 424 23.8221 424 23.8221V663H4.702L-26 56.6499Z"
+            fill="white"
+          />
+        </svg>
+
+        <svg
+          id="adorno_ola_cafe"
+          viewBox="0 0 398 150"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 57.1626C0 57.1626 23.4862 -7.13877 87.6621 0.655341C151.838 8.44945 175.076 82.4935 240.378 84.442C305.68 86.3905 435 24.0377 435 24.0377V669H29.6786L0 57.1626Z"
+            fill="#421F09"
+          />
+        </svg>
+      </div> -->
+
+      <h2 id="registro__fondo_verde__registro__formulario__titulo">
+        Registro
+      </h2>
+
+      <form id="registro__fondo_verde__registro__formulario__form"
+            (ngSubmit)="register()"
+            #registerForm="ngForm"
+      >
+        <ion-input
+          name="username"
+          [(ngModel)]="user.username"
+          label="Nombre de usuario"
+          labelPlacement="floating"
+          [counter]="true"
+          [required]="true"
+          maxlength="10"
+        ></ion-input>
+
+        <ion-input
+          name="email"
+          [(ngModel)]="user.email"
+          label="Correo"
+          labelPlacement="floating"
+          [counter]="true"
+          [required]="true"
+          type="email"
+          maxlength="30"
+        ></ion-input>
+
+        <ion-input
+          name="fullName"
+          [(ngModel)]="user.fullName"
+          label="Nombre completo"
+          type="text"
+          labelPlacement="floating"
+          [required]="true"
+        ></ion-input>
+
+        <ion-input
+          [(ngModel)]="user.controlNumber"
+          name="controlNumber"
+          label="Número de control"
+          type="text"
+          labelPlacement="floating"
+          [required]="true"
+        ></ion-input>
+
+        <ion-input
+          name="group"
+          label="Grupo"
+          type="text"
+          labelPlacement="floating"
+          [required]="true"
+          [(ngModel)]="user.group"
+        ></ion-input>
+
+        <ion-item>
+          <ion-input
+            name="password"
+            [type]="mostrarContrasena ? 'text' : 'password'"
+            label="Contraseña"
+            labelPlacement="floating"
+            [required]="true"
+            [(ngModel)]="user.password"
+          >
+          </ion-input>
+          <ion-button fill="clear" slot="end" (click)="alternarContrasena()">
+            <ion-icon
+              [name]="mostrarContrasena ? 'eye-off' : 'eye'"
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-item style="margin-top: 1.5rem">
+          <ion-input
+            [type]="mostrarRepetirContrasena ? 'text' : 'password'"
+            label="Repetir contraseña"
+            labelPlacement="floating"
+            [counter]="true"
+          >
+          </ion-input>
+          <ion-button
+            fill="clear"
+            slot="end"
+            (click)="alternarRepetirContrasena()"
+          >
+            <ion-icon
+              [name]="mostrarRepetirContrasena ? 'eye-off' : 'eye'"
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-checkbox>Acepto los terminos y condiciones</ion-checkbox>
+        <ion-button class="button-registrarse" type="submit" [disabled]="!registerForm.valid" >Registrar</ion-button>
+      </form>
+    </div>
+
+
+    <div id="registro__formulario">
+      <h2 id="registro__formulario__titulo">Registrar</h2>
+      <form id="registro__formulario__form" (ngSubmit)="register()" #registerForm="ngForm">
+        <ion-input
+          name="username"
+          [(ngModel)]="user.username"
+          label="Nombre de usuario"
+          labelPlacement="floating"
+          [counter]="true"
+          [required]="true"
+          maxlength="10"
+        ></ion-input>
+
+        <ion-input
+          name="email"
+          [(ngModel)]="user.email"
+          label="Correo"
+          labelPlacement="floating"
+          [counter]="true"
+          [required]="true"
+          type="email"
+          maxlength="30"
+        ></ion-input>
+
+        <ion-input
+          name="fullName"
+          [(ngModel)]="user.fullName"
+          label="Nombre completo"
+          type="text"
+          labelPlacement="floating"
+          [counter]="true"
+          [required]="true"
+          maxlength="30"
+        ></ion-input>
+
+          <ion-input
+            name="controlNumber"
+            [(ngModel)]="user.controlNumber"
+            label="Número de control"
+            type="text"
+            labelPlacement="floating"
+            [required]="true"
+            [counter]="true"
+            maxlength="10"
+          ></ion-input>
+
+          <ion-input
+            name="group"
+            [(ngModel)]="user.group"
+            label="Grupo"
+            type="text"
+            labelPlacement="floating"
+            [required]="true"
+            [counter]="true"
+            maxlength="10"
+          ></ion-input>
+
+        <ion-item>
+          <ion-input
+            [type]="mostrarContrasena ? 'text' : 'password'"
+            label="Contraseña"
+            labelPlacement="floating"
+            [counter]="true"
+          >
+          </ion-input>
+          <ion-button fill="clear" slot="end" (click)="alternarContrasena()">
+            <ion-icon [name]="mostrarContrasena ? 'eye-off' : 'eye'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-item style="margin-top: 1.5rem">
+          <ion-input
+            [type]="mostrarRepetirContrasena ? 'text' : 'password'"
+            label="Repetir contraseña"
+            labelPlacement="floating"
+            [counter]="true"
+          >
+          </ion-input>
+          <ion-button
+            fill="clear"
+            slot="end"
+            (click)="alternarRepetirContrasena()"
+          >
+            <ion-icon
+              [name]="mostrarRepetirContrasena ? 'eye-off' : 'eye'"
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-checkbox>Acepto los terminos y condiciones</ion-checkbox>
+        <ion-button class="button-registrarse" type="submit" [disabled]="!registerForm.valid">Registrar</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

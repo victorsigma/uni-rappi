@@ -1,0 +1,115 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="inicio_de_sesion">
+    <div id="inicio_de_sesion__fondo_verde">
+      <div id="inicio_de_sesion__fondo_verde__figura">
+        <img
+          id="inicio_de_sesion__fondo_verde__figura__logo"
+          src="assets/images/logos/Macondo-logo.png"
+          alt="Logo Sr.Macondo"
+        />
+      </div>
+      <div id="inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario">
+        <div id="adorno_ola">
+          <svg
+            id="adorno_ola_blanco"
+            viewBox="0 0 412 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M-26 56.6499C-26 56.6499 -1.70396 -7.07474 64.6849 0.649464C131.074 8.37367 155.113 81.7536 222.667 83.6847C290.221 85.6157 424 23.8221 424 23.8221V663H4.702L-26 56.6499Z"
+              fill="white"
+            />
+          </svg>
+
+          <svg
+            id="adorno_ola_cafe"
+            viewBox="0 0 398 150"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 57.1626C0 57.1626 23.4862 -7.13877 87.6621 0.655341C151.838 8.44945 175.076 82.4935 240.378 84.442C305.68 86.3905 435 24.0377 435 24.0377V669H29.6786L0 57.1626Z"
+              fill="#421F09"
+            />
+          </svg>
+        </div>
+
+        <h2
+          id="inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__titulo"
+        >
+          Iniciar sesion
+        </h2>
+
+        <form id="inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form"(ngSubmit)="login()" #loginForm="ngForm">
+          <ion-input
+            name="usernameOrEmail"
+            [(ngModel)]="usernameOrEmail"
+            label="Nombre o correo"
+            type="text"
+            labelPlacement="floating"
+            [required]="true"
+            [counter]="true"
+            maxlength="30"
+          ></ion-input>
+
+          <ion-item>
+            <ion-input
+              name="password"
+              [(ngModel)]="password"
+              [type]="mostrarContrasena ? 'text' : 'password'"
+              label="Contraseña"
+              labelPlacement="floating"
+              [required]="true"
+            >
+            </ion-input>
+            <ion-button fill="clear" slot="end" (click)="alternarContrasena()">
+              <ion-icon
+                [name]="mostrarContrasena ? 'eye-off' : 'eye'"
+              ></ion-icon>
+            </ion-button>
+          </ion-item>
+
+          <ion-button class="button-ingresar" type="submit" [disabled]="!loginForm.valid">Iniciar sesión</ion-button>
+        </form>
+      </div>
+    </div>
+    <div id="inicio_de_sesion__formulario">
+      <h2 id="inicio_de_sesion__formulario__titulo">Iniciar sesion</h2>
+      <form id="inicio_de_sesion__formulario__form" (ngSubmit)="login()" #loginForm="ngForm">
+        <ion-input
+          name="usernameOrEmail"
+          [(ngModel)]="usernameOrEmail"
+          label="Nombre o correo"
+          type="text"
+          labelPlacement="floating"
+          [required]="true"
+          [counter]="true"
+          maxlength="30"
+        ></ion-input>
+        <ion-item>
+          <ion-input
+            name="password"
+            [(ngModel)]="password"
+            [type]="mostrarContrasena ? 'text' : 'password'"
+            label="Contraseña"
+            labelPlacement="floating"
+            [required]="true"
+          >
+          </ion-input>
+          <ion-button fill="clear" slot="end" (click)="alternarContrasena()">
+            <ion-icon [name]="mostrarContrasena ? 'eye-off' : 'eye'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-button class="button-ingresar" type="submit" [disabled]="!loginForm.valid">Iniciar sesión</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

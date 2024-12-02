@@ -1,0 +1,192 @@
+#registro {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#registro__fondo_verde {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #0FCAAD, #016959);
+    height: 100dvh;
+    width: 40%;
+}
+
+#registro__formulario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    overflow: auto; /* Desplazamiento automático */
+    -ms-overflow-style: none; /* IE y Edge: Oculta la barra */
+    scrollbar-width: none; /* Firefox: Oculta la barra */
+}
+
+#registro__formulario::-webkit-scrollbar {
+    display: none; /* Chrome, Safari: Oculta la barra */
+}
+
+
+#registro__formulario__titulo {
+    margin-top: 7vh;
+    font-size: clamp(2rem, 2.90vw, 6rem);
+    font-weight: 600;
+}
+
+#registro__fondo_verde__figura__logo {
+    height: 25vw;
+}
+
+#registro__formulario__form {
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#registro__formulario__form ion-input {
+    margin-top: 0.3rem;
+}
+
+#registro__formulario__form ion-checkbox {
+    margin-top: 2rem;
+}
+
+#registro__formulario__form ion-button {
+    margin-top: 2rem;
+}
+
+#registro__fondo_verde__registro__formulario{
+    display: none;
+}
+
+ion-item {
+    --background: transparent;
+    --padding-start: 0;
+    --padding-end: 0;
+    width: 100%;
+}
+
+#registro__formulario__form ion-item ion-input{
+    background-color: #ffffff00;
+}
+
+.button-registrarse {
+    --color: white;
+    --color-activated: white;
+    --color-focused: white;
+    --color-hover: white;
+    --background: #E86411;
+}
+
+@media (max-width: 768px) {
+    #registro{
+        flex-wrap: wrap;
+    }
+
+    #registro__fondo_verde {
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #registro__formulario {
+        display: none;
+    }
+
+    #registro__fondo_verde__ayuda {
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        z-index: 100;
+    }
+
+    #registro__fondo_verde__registro__formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        z-index: 5;
+    }
+
+    #adorno_ola {
+        position: relative;
+        width: 100%;
+        background-color: red;
+    }
+
+    #adorno_ola_blanco {
+        position: absolute;
+        width: 120%;
+        left: 50%; /* Posición horizontal */
+        transform: translate(-50%, -20%); /* Centra el SVG */
+        z-index: 2;
+    }
+
+    #adorno_ola_cafe {
+        position: absolute;
+        width: 120%;
+        left: 55%; /* Posición horizontal */
+        transform: translate(-50%, -40%); /* Centra el SVG */
+        z-index: 1;
+    }
+
+    #registro__fondo_verde__figura {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    #registro__fondo_verde__figura__logo {
+        height: 45vw;
+    }
+
+    #registro__fondo_verde__registro__formulario__form ion-input {
+        margin-top: 0.3rem;
+        z-index: 5;
+    }
+    
+    #registro__fondo_verde__registro__formulario__form ion-checkbox {
+        z-index: 5;
+        margin-top: 2rem;
+    }
+    
+    #registro__fondo_verde__registro__formulario__form ion-button {
+        z-index: 5;
+        margin-top: 2rem;
+    }
+
+    #registro__fondo_verde__registro__formulario__form ion-item {
+        z-index: 5;
+    }
+    
+    #registro__fondo_verde__registro__formulario__titulo {
+        z-index: 5;
+        margin-top: 10%;
+    }
+
+    #registro__fondo_verde__registro__formulario__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    #registro__fondo_verde__registro__formulario__form__contrasenia {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row ;
+    }
+}
