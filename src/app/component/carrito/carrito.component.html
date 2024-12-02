@@ -1,12 +1,64 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Modal Fullscreen</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    <ion-title>Carrito</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()"
+        ><ion-icon name="chevron-back-outline"></ion-icon
+      ></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <p>Este es un modal que cubre toda la pantalla.</p>
+  <div *ngIf="products.length >= 1">
+    <ion-grid *ngFor="let prod of products">
+      <ion-row>
+        <ion-card class="car__card">
+          <ion-card-header class="car__card__header">
+            <div class="car__card__header__content">
+              <img
+                class="car__card__image"
+                src="{{ prod.imagen }}"
+                alt="{{ prod.productDescription }}"
+              />
+            </div>
+            <div class="car__card__description">
+              <ion-card-title class="car__card__description__title">{{
+                prod.productname
+              }}</ion-card-title>
+              <ion-card-subtitle class="car__card__description__subtitle">
+                Precio: ${{ prod.price }}</ion-card-subtitle
+              >
+              <ion-card-content class="car__card__content">
+                {{ prod.productDescription }}
+              </ion-card-content>
+            </div>
+            <div class="car__card__options">
+              <ion-button fill="clear" (click)="eliminarProducto(prod)"
+                ><ion-icon name="close-outline"></ion-icon
+              ></ion-button>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="products.length == 0">
+    <p>nothing</p>
+  </div>
 </ion-content>
+
+<ion-footer *ngIf="products.length >= 1">
+  <div id="product">
+    <div id="product__total">
+      <h3>Total</h3>
+      <h1> {{ totalPrice | currency }} </h1>
+    </div>
+    <div  id="product__buttons">
+      <ion-col
+        ><ion-button class="button-registrarse">Ir a pagar</ion-button></ion-col
+      >
+    </div>
+  </div>
+</ion-footer>
