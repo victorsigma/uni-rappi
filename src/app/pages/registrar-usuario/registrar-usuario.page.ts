@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./registrar-usuario.page.scss'],
 })
 export class RegistrarUsuarioPage implements OnInit {
-   user = {
+  user = {
     username: '',
     email: '',
     fullName: '',
@@ -18,13 +18,15 @@ export class RegistrarUsuarioPage implements OnInit {
     role: 'user',
   };
   mostrarContrasena: boolean = false;
-  repetirContrasena: string = "";
+  repetirContrasena: string = '';
   mostrarRepetirContrasena: boolean = false;
 
-  constructor(private authService: AuthService, private navCtrl: NavController) { }
+  constructor(
+    private authService: AuthService,
+    private navCtrl: NavController
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   alternarContrasena() {
     console.log(this.mostrarContrasena);
@@ -35,7 +37,7 @@ export class RegistrarUsuarioPage implements OnInit {
     console.log(this.mostrarContrasena);
     this.mostrarContrasena = !this.mostrarContrasena; // Alterna el valor entre true y false
   }
-  
+
   register() {
     this.authService.register(this.user).subscribe({
       next: (response) => {
