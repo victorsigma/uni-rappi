@@ -1,0 +1,104 @@
+<ion-menu side="start" menuId="first" contentId="main-content" *ngIf="true">
+  <ion-header>
+    <ion-toolbar color="light"> </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none" style="padding: 0.5rem">
+      <ion-item-divider button class="divider">
+        <ion-label>
+          <ion-text class="text-button">User Nº 1</ion-text>
+          <br />
+          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
+        </ion-label>
+
+        <ion-icon name="person-outline" slot="end" style="font-size: 24px; color: black"></ion-icon>
+      </ion-item-divider>
+      <ion-item-divider button class="divider"><ion-grid
+          style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032">
+          <ion-row>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon style="color: black; font-size: 24px" name="settings-outline"></ion-icon>
+            </ion-col>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon style="color: black; font-size: 24px" name="contrast-outline"></ion-icon>
+            </ion-col>
+            <ion-col style="display: flex; justify-content: center">
+              <ion-icon style="color: black; font-size: 24px" name="wallet-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+      <!-- Secciones -->
+      <ion-item-divider class="selections">
+        <ion-label>Secciones</ion-label>
+      </ion-item-divider>
+      <!-- Sección Pizza -->
+      <a routerLink="/pizzas" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu">
+          <ion-icon slot="start" name="pizza-outline" class="icon"></ion-icon>
+          <ion-label>
+            <ion-text class="text-button">
+              Pizza
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+      <!-- Sección Gorditas, Quesadillas y Platillos -->
+      <a routerLink="/quesadillas" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu">
+          <ion-icon slot="start" name="restaurant-outline" class="icon"></ion-icon>
+          <ion-label>
+            <ion-text class="text-button">
+              Gorditas, Quesadillas y Platillos
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+      <!-- Sección Bebidas y Postres -->
+      <a routerLink="/postres" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu"><ion-icon slot="start" name="ice-cream-outline" class="icon">
+          </ion-icon>
+
+          <ion-label>
+            <ion-text class="text-button">
+              Bebidas y Postres
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+      <!-- Sección Tacos y tortas -->
+      <a routerLink="/tacos" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu">
+          <ion-icon slot="start" name="fast-food-outline" class="icon"></ion-icon>
+          <ion-label>
+            <ion-text class="text-button">
+              Tacos y Tortas
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+      <!-- Hmaburgesas -->
+      <a routerLink="/hamburguesas" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu">
+          <ion-icon slot="start" name="fast-food-sharp" class="icon"></ion-icon>
+          <ion-label>
+            <ion-text class="text-button">
+              Hamburguesas
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+      <!-- Dulces -->
+      <a routerLink="/dulceria" style="text-decoration: none; color: inherit">
+        <ion-item button class="item-menu">
+          <ion-icon slot="start" name="happy-outline" class="icon"></ion-icon>
+          <ion-label>
+            <ion-text class="text-button">
+              Dulceria
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-menu>

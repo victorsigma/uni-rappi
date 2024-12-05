@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DulceriaPageRoutingModule } from './dulceria-routing.module';
 
 import { DulceriaPage } from './dulceria.page';
+import { FooterModule } from 'src/app/component/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { DulceriaPage } from './dulceria.page';
     FormsModule,
     IonicModule,
     DulceriaPageRoutingModule,
+    FooterModule
   ],
   declarations: [DulceriaPage ]
 })
