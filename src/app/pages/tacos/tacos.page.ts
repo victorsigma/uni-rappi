@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-tacos',
@@ -8,42 +9,43 @@ import { AlertController } from '@ionic/angular';
 })
 export class TacosPage implements OnInit {
 
-   menu = [
+  menu = [
     {
       "name": "Tacos",
-      "image":"https://t4.ftcdn.net/jpg/09/66/73/59/240_F_966735986_TkgN0ueuhZoNcBBUQlsSNsMpZK5DoAu1.jpg"        
+      "image": "https://t4.ftcdn.net/jpg/09/66/73/59/240_F_966735986_TkgN0ueuhZoNcBBUQlsSNsMpZK5DoAu1.jpg"
     },
-     {
+    {
       "name": "Tortas",
-      "image":"https://t4.ftcdn.net/jpg/03/66/34/87/240_F_366348718_qqoTPPaYh5hEfdUDG8kZUHoE91XETYdA.jpg"       
+      "image": "https://t4.ftcdn.net/jpg/03/66/34/87/240_F_366348718_qqoTPPaYh5hEfdUDG8kZUHoE91XETYdA.jpg"
     },
-     {
+    {
       "name": "Quesadillas",
-      "image":"https://t3.ftcdn.net/jpg/05/97/08/60/240_F_597086001_dSkCB93ZHgVZV5RrITJjswqmmxcwwG4G.jpg"        
+      "image": "https://t3.ftcdn.net/jpg/05/97/08/60/240_F_597086001_dSkCB93ZHgVZV5RrITJjswqmmxcwwG4G.jpg"
     }
   ];
 
- tacos = [
-  { "name": "Flan Napolitano", "price": 30 },
-  { "name": "Arroz con Leche", "price": 20 },
-  { "name": "Tarta de Limón", "price": 35 },
-  { "name": "Churros con Chocolate", "price": 25 },
-  { "name": "Torta de Elote", "price": 28 },
-  { "name": "Pastel Tres Leches", "price": 40 },
-  { "name": "Gelatina de Mosaico", "price": 18 },
-  { "name": "Helado Artesanal", "price": 30 },
-  { "name": "Cajeta con Crema", "price": 22 },
-  { "name": "Dulce de Leche con Pan", "price": 18 }
-];
+  tacos: Array<{ "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private productosService: ProductosService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.productosService.buscarPorMenu(4).subscribe({
+      complete: () => { },
+      next: (value: any) => {
+        console.log(value);
+        this.tacos = value.data
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    })
+  }
 
-  async presentAlert(postre: { name: string; price: number; }) {
+
+  async presentAlert(taco: { "productname": string, "price": number, "photoUrl": string, "stock": string }) {
     const alert = await this.alertController.create({
-      header: `${postre.name}`,
-      subHeader: `Precio: $${postre.price}`,
+      header: `${taco.productname}`,
+      subHeader: `Precio: $${taco.price}`,
       message: '¿Cuántas unidades deseas agregar?',
       inputs: [
         {
@@ -52,6 +54,7 @@ export class TacosPage implements OnInit {
           placeholder: 'Cantidad',
           min: 1, // Mínimo 1 para que no sea negativo
           value: 1, // Valor por defecto
+          max: taco.stock
         },
       ],
       buttons: [
@@ -67,7 +70,7 @@ export class TacosPage implements OnInit {
           handler: (data) => {
             const quantity = data.quantity;
             if (quantity > 0) {
-              console.log(`Se agregaron ${quantity} unidades de la quesadilla ${postre.name}`);
+              console.log(`Se agregaron ${quantity} unidades de la quesadilla ${taco.productname}`);
             } else {
               console.log('Cantidad inválida');
             }
