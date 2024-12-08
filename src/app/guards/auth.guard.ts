@@ -8,7 +8,7 @@ export const authGuard: CanActivateFn = async (route, state) => {
   const router = inject(Router);
 
   // Verificar si el usuario está logueado
-  if (!tokenService.isLogged()) {
+  if (!(await tokenService.isLogged()) || !(await tokenService.isTokenValid())) {
     return router.createUrlTree(['/iniciar-sesion']);
   }
 

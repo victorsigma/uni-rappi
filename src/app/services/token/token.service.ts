@@ -48,6 +48,16 @@ export class TokenService {
     }
   }
 
+  public async isTokenValid(): Promise<boolean> {
+    const decoded = await this.decodeToken();
+    if (!decoded) {
+      return false; // Token no válido o no existe
+    }
+
+    const currentTime = Math.floor(Date.now() / 1000);
+    return decoded.exp && decoded.exp > currentTime; // Verifica que el token no haya expirado
+  }
+
   public async getRole(): Promise<string | null> {
     if (!(await this.isLogged())) {
       return null;
