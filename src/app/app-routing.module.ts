@@ -92,7 +92,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/form-establecimientos/form-establecimientos.module').then( m => m.FormEstablecimientosPageModule)
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
-
+]
 
 @NgModule({
   imports: [
