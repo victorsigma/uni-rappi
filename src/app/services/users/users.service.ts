@@ -21,4 +21,16 @@ export class UsersService {
     return this.http.patch(`${this.apiUrl}/users/${userId}`, data);
   }
 
+  deleteUser(userId: number) {
+    return this.http.delete(`${this.apiUrl}/users/${userId}`);
+  }
+  
+  uploadPhoto(userId: number, formData: FormData) {
+    return this.http.patch(`${this.apiUrl}/users/${userId}/photo`, formData);
+  }
+
+  removePhoto(userId: number) {
+    return this.http.delete(`${this.apiUrl}/users/${userId}/photo`);
+  }
+
 }

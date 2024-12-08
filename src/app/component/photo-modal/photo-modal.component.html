@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir foto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [disabled]="isLoading" (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading" name="crescent" class="loading-spinner"></ion-spinner>
+
+  <div *ngIf="!isLoading">
+    <div *ngIf="photoUrl" class="current-photo-container">
+      <img [src]="photoUrl" alt="Foto actual" class="current-photo" />
+      <ion-button expand="block" (click)="removePhoto()">Eliminar foto</ion-button>
+    </div>
+
+    <ion-item>
+      <ion-label>Seleccionar imagen</ion-label>
+      <input type="file" (change)="onFileChange($event)" />
+    </ion-item>
+
+    <ion-button expand="block" (click)="uploadPhoto()">Guardar</ion-button>
+  </div>
+</ion-content>

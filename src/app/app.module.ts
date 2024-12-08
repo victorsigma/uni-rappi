@@ -15,9 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './component/menu/menu.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { authInterceptor } from './interceptors/auth.interceptor';
+import { PhotoModalComponent } from './component/photo-modal/photo-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent],
+  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent, PhotoModalComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
