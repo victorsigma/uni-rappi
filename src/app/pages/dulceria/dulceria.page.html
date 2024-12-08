@@ -3,12 +3,14 @@
     <!-- Botón de menú en el lado izquierdo -->
     <ion-buttons slot="start">
       <ion-menu-button menu="first">
-        <ion-icon
-          class="icono-menu"
-          slot="icon-only"
-          name="menu-outline"
-        ></ion-icon>
+        <ion-icon class="icono-menu" slot="icon-only" name="menu-outline"></ion-icon>
       </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons id="icono_carrito" slot="end">
+      <ion-button (click)="openCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -16,14 +18,7 @@
 <ion-content id="main-content" [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col
-        *ngFor="let item of menu"
-        size-xs="6"
-        size-sm="6"
-        size-md="6"
-        size-lg="4"
-        size-xl="4"
-      >
+      <ion-col *ngFor="let item of menu" size-xs="6" size-sm="6" size-md="6" size-lg="4" size-xl="4">
         <ion-card>
           <img class="image-container" [src]="item.image" [alt]="item.name" />
           <ion-card-header>
@@ -34,22 +29,11 @@
     </ion-row>
     <ion-item-divider> </ion-item-divider>
     <ion-row>
-      <ion-col
-        *ngFor="let dulceria of dulces"
-        size-xs="6"
-        size-sm="6"
-        size-md="6"
-        size-lg="3"
-        size-xl="3"
-      >
+      <ion-col *ngFor="let dulceria of dulces" size-xs="6" size-sm="6" size-md="6" size-lg="3" size-xl="3">
         <ion-card>
           <ion-card-header>
-            <ion-card-title
-              >{{ dulceria.productname }} ${{ dulceria.price }}</ion-card-title
-            >
-            <ion-button class="Agregar" (click)="presentAlert(dulceria)"
-              >Agregar</ion-button
-            >
+            <ion-card-title>{{ dulceria.productname }} ${{ dulceria.price }}</ion-card-title>
+            <ion-button class="Agregar" (click)="presentAlert(dulceria)">Agregar</ion-button>
           </ion-card-header>
         </ion-card>
       </ion-col>
@@ -68,7 +52,7 @@
             <p>TIENDA</p>
           </a>
         </ion-col>
-  
+
         <!-- Carrito -->
         <ion-col class="footer-item" size="4">
           <a routerLink="/carrito" style="text-decoration: none; color: inherit">
@@ -76,7 +60,7 @@
             <p>CARRITO</p>
           </a>
         </ion-col>
-  
+
         <!-- Perfil -->
         <ion-col class="footer-item" size="4">
           <a routerLink="/perfil" style="text-decoration: none; color: inherit">

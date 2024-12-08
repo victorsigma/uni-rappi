@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { CartProduct, CartProductView } from 'src/app/models/apiModels';
 import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
@@ -8,16 +9,27 @@ import { CarService } from 'src/app/services/car/car.service';
   styleUrls: ['./carrito.component.scss'],
 })
 export class CarritoComponent  implements OnInit {
-  products: any[] = [];
+  products: CartProductView[] = [];
   totalPrice: number = 0;
 
   constructor(private modalController:ModalController, private carService:CarService) { 
-    this.products = carService.getCarItems();
-    console.log(this.products);
 
     this.carService.totalPrice$.subscribe((price) => {
       this.totalPrice = price;
     });
+  }
+
+  async obtenerCarrito() {
+    (await this.carService.getCarItems()).subscribe({
+      complete: () => {},
+      next: (value) => {
+        this.products = value.data.cartProducts.map((element: CartProduct) => {
+          return { ...element.product, quantity: element.quantity, total: element.total }
+        })
+      },
+      error: () => {}
+    })
+
   }
 
   dismissModal() {
@@ -28,6 +40,7 @@ export class CarritoComponent  implements OnInit {
     this.carService.removeFromCart(product);
   }
 
-  ngOnInit() {}
-
+  async ngOnInit() {
+    await this.obtenerCarrito();
+  }
 }
