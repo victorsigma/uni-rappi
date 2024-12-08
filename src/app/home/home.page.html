@@ -1,3 +1,27 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="light"> </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none" style="padding: 0.5rem">
+      <ion-item-divider
+        button
+        style="
+          --background: #d8d8d7;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 2rem;
+          border-radius: 0.5rem;
+          margin-top: 3rem;
+        "
+      >
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem"
+            >User Nº 1</ion-text
+          >
+          <br />
+          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
+        </ion-label>
 
         <ion-icon
           name="person-outline"
@@ -281,31 +305,26 @@
       <ion-col size-xs="12" size-md="6" size-lg="6" class="content-col">
         <div class="content">
           <h2>MIRA NUESTRO<br />NUEVO CONTENIDO</h2>
-          <a
-            href="/plantilla-tienda"
-            style="text-decoration: none; color: inherit"
-          >
-            <button class="cta-button">Click Aquí</button>
-          </a>
+          <button class="cta-button">Click Aquí</button>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-grid>
     <ion-row class="menu-items">
-      <ion-col size="3" class="menu-item" routerLink="/pizzas">
+      <ion-col size="3" class="menu-item">
         <img src="assets/img/pizza.png" alt="Pizza" />
         <p>Pizza</p>
       </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/dulceria">
+      <ion-col size="3" class="menu-item">
         <img src="assets/img/menu-de-snacks.png" alt="Botanas" />
         <p>Botanas</p>
       </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/tacos">
+      <ion-col size="3" class="menu-item">
         <img src="assets/img/taco.png" alt="Tacos" />
         <p>Tacos</p>
       </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/hamburguesas">
+      <ion-col size="3" class="menu-item">
         <img src="assets/img/hamburguesa.png" alt="Hamburguesa" />
         <p>Hamburguesa</p>
       </ion-col>
@@ -360,7 +379,7 @@
       <ion-row>
         <!-- Tienda -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/home" style="text-decoration: none; color: inherit">
+          <a href="/tienda" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
@@ -368,7 +387,7 @@
 
         <!-- Carrito -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
+          <a href="/carrito" style="text-decoration: none; color: inherit">
             <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
             <p>CARRITO</p>
           </a>
@@ -376,7 +395,7 @@
 
         <!-- Perfil -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/perfil" style="text-decoration: none; color: inherit">
+          <a href="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>
           </a>
