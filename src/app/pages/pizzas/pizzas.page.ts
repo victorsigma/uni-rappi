@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { ProductosService } from '../../services/productos.service';
+import { CarritoComponent } from 'src/app/component/carrito/carrito.component';
+import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
   selector: 'app-pizzas',
@@ -8,9 +10,11 @@ import { ProductosService } from '../../services/productos.service';
   styleUrls: ['./pizzas.page.scss'],
 })
 export class PizzasPage implements OnInit {
-  pizzas: Array<{ "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
+  pizzas: Array<{ "id": number, "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
 
-  constructor(private alertController: AlertController, private productosService: ProductosService) { }
+  constructor(private alertController: AlertController, private productosService: ProductosService,
+    private modalController: ModalController,
+    private carService: CarService) { }
 
   ngOnInit() {
     this.productosService.buscarPorMenu(2).subscribe({
@@ -25,7 +29,7 @@ export class PizzasPage implements OnInit {
     })
   }
 
-  async presentAlert(pizza: { productname: string; price: number; photoUrl: string, stock: string }) {
+  async presentAlert(pizza: { id: number, productname: string; price: number; photoUrl: string, stock: string }) {
     const alert = await this.alertController.create({
       header: `Pizza ${pizza.productname}`,
       subHeader: `Precio: $${pizza.price}`,
@@ -50,10 +54,12 @@ export class PizzasPage implements OnInit {
         },
         {
           text: 'Agregar',
-          handler: (data) => {
+          handler: async (data) => {
             const quantity = data.quantity;
             if (quantity > 0) {
               console.log(`Se agregaron ${quantity} unidades de la pizza ${pizza.productname}`);
+
+              (await this.carService.addToCar({ id: pizza.id, quantity }));
             } else {
               console.log('Cantidad inválida');
             }
@@ -65,4 +71,16 @@ export class PizzasPage implements OnInit {
     await alert.present();
   }
 
+  async openCarrito() {
+    const modal = await this.modalController.create({
+      component: CarritoComponent, // No especificamos un componente aquí
+      cssClass: 'full-modal', // Estilos personalizados (opcional)
+      backdropDismiss: true,  // Permitir cerrar al hacer clic fuera
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
+    });
+
+    await modal.present();
+  }
 }
