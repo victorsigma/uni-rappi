@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PizzasPageRoutingModule } from './pizzas-routing.module';
 
 import { PizzasPage } from './pizzas.page';
+import { FooterModule } from 'src/app/component/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PizzasPageRoutingModule
+    PizzasPageRoutingModule,
+    FooterModule
   ],
   declarations: [PizzasPage]
 })

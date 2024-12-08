@@ -1,233 +1,3 @@
-<ion-menu side="start" menuId="first" contentId="main-content">
-  <ion-header>
-    <ion-toolbar color="light"> </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list lines="none" style="padding: 0.5rem">
-      <ion-item-divider
-        button
-        style="
-          --background: #d8d8d7;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 2rem;
-          border-radius: 0.5rem;
-          margin-top: 3rem;
-        "
-      >
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem"
-            >User Nº 1</ion-text
-          >
-          <br />
-          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
-        </ion-label>
-
-        <ion-icon
-          name="person-outline"
-          slot="end"
-          style="font-size: 24px; color: black"
-        ></ion-icon>
-      </ion-item-divider>
-      <ion-item-divider
-        button
-        style="
-          --background: #d8d8d7;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 2rem;
-          border-radius: 0.5rem;
-          margin-top: 3rem;
-        "
-        ><ion-grid
-          style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
-        >
-          <ion-row>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="settings-outline"
-              ></ion-icon>
-            </ion-col>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="contrast-outline"
-              ></ion-icon>
-            </ion-col>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="wallet-outline"
-              ></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item-divider>
-      <!-- Secciones -->
-      <ion-item-divider
-        style="
-          font-family: 'Serif';
-          font-size: 1.4rem;
-          font-weight: bold;
-          color: black;
-          text-align: center;
-          --background: none;
-          margin: 2rem 0 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-label>Secciones</ion-label>
-      </ion-item-divider>
-      <!-- Sección Pizza -->
-      <a href="/pizzas" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="pizza-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Pizza
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-      <!-- Sección Gorditas, Quesadillas y Platillos -->
-      <a href="/quesadillas" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="restaurant-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Gorditas, Quesadillas y Platillos
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-      <!-- Sección Bebidas y Postres -->
-      <a href="/postres" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-          ><ion-icon
-            slot="start"
-            name="ice-cream-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          >
-          </ion-icon>
-
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Bebidas y Postres
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-      <!-- Sección Tacos y tortas -->
-      <a href="/tacos" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="fast-food-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Tacos y Tortas
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-      <!-- Hmaburgesas -->
-      <a href="/hamburguesas" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="fast-food-sharp"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Hamburguesas
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-      <!-- Dulces -->
-      <a href="/dulceria" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="happy-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Dulceria
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
 <ion-header [translucent]="true">
   <ion-toolbar class="custom-navbar">
     <!-- Botón de menú en el lado izquierdo -->
@@ -274,23 +44,23 @@
       <ion-row>
         <!-- Tienda -->
         <ion-col class="footer-item" size="4">
-          <a href="/tienda" style="text-decoration: none; color: inherit">
+          <a routerLink="/home" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
         </ion-col>
-
+  
         <!-- Carrito -->
         <ion-col class="footer-item" size="4">
-          <a href="/carrito" style="text-decoration: none; color: inherit">
+          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
             <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
             <p>CARRITO</p>
           </a>
         </ion-col>
-
+  
         <!-- Perfil -->
         <ion-col class="footer-item" size="4">
-          <a href="/perfil" style="text-decoration: none; color: inherit">
+          <a routerLink="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>
           </a>

@@ -78,7 +78,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registrar-usuario/registrar-usuario.module').then( m => m.RegistrarUsuarioPageModule),
   },
   {
-    path: 'plantilla-tienda',
+    path: 'carrito',
     loadChildren: () => import('./pages/plantilla-tienda/plantilla-tienda.module').then( m => m.PlantillaTiendaPageModule),
     canActivate: [authGuard],
     data: { roles: ['user', 'admin', 'vendedor']}
@@ -89,7 +89,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { useHash: false, onSameUrlNavigation: 'reload' })
   ],
   exports: [RouterModule]
 })
