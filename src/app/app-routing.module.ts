@@ -86,6 +86,8 @@ const routes: Routes = [
   {
     path: 'creditos',
     loadChildren: () => import('./pages/creditos/creditos.module').then( m => m.CreditosPageModule),
+    canActivate: [authGuard],
+    data: { roles: ['user', 'admin', 'vendedor']}
   },
   {
     path: 'form-establecimientos',
