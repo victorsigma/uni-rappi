@@ -113,6 +113,41 @@
                 <ion-card-title>Información de tu cuenta</ion-card-title>
               </ion-card-header>
             </ion-col>
+
+            <ion-col size="6" class="center">
+              <div (click)="openPhotoModal()" class="photo-container">
+                <ng-container *ngIf="photoUrl; else defaultIcon">
+                  <img
+                    [src]="photoUrl"
+                    class="profile-photo"
+                    alt="Foto de usuario"
+                  />
+                </ng-container>
+                <ng-template #defaultIcon>
+                  <ion-icon
+                    name="person-circle-outline"
+                    class="default-icon"
+                  ></ion-icon>
+                </ng-template>
+              </div>
+            </ion-col>
+            <ion-col 
+            size-xs="5"
+            size-sm="5"
+            size-md="5"
+            size-lg="5"
+            size-xl="5">
+              <ion-card-content>
+                <strong>Opciones</strong>
+              </ion-card-content>
+              <ion-button expand="block" class="btn-sesion" (click)="changePassword()">
+                Actualizar Contraseña
+              </ion-button>
+              <ion-button expand="block" class="btn-sesion" (click)="deleteAccount()">
+                Eliminar Cuenta
+              </ion-button>
+            </ion-col>
+
             <ion-col
               size-xs="12"
               size-sm="6"
@@ -164,6 +199,24 @@
                 ></ion-input>
               </ion-item>
             </ion-col>
+
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-xl="6"
+            >
+              <ion-card-content> Telefono </ion-card-content>
+              <ion-item>
+                <ion-input
+                  type="email"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="phonenumber"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
             <ion-col
               size-xs="12"
               size-sm="6"
@@ -188,40 +241,23 @@
               size-lg="6"
               size-xl="6"
             >
-            <ion-card-content> Grupo </ion-card-content>
-            <ion-item>
-              <ion-input
-                type="email"
-                placeholder=""
-                [readonly]="!isEditing"
-                [(ngModel)]="group"
-              ></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col
-            size-xs="12"
-            size-sm="6"
-            size-md="6"
-            size-lg="6"
-            size-xl="6"
-          >
-          <ion-card-content> Telefono </ion-card-content>
-          <ion-item>
-            <ion-input
-              type="email"
-              placeholder=""
-              [readonly]="!isEditing"
-              [(ngModel)]="group"
-            ></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-row
-          size-xs="6"
-          size-sm="6"
-          size-md="6"
-          size-lg="6"
-          size-xl="6"
-        >
+              <ion-card-content> Grupo </ion-card-content>
+              <ion-item>
+                <ion-input
+                  type="email"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="group"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-row
+              size-xs="6"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-xl="6"
+            >
               <!-- <ion-card-content>
                 <label for="genero">ROL</label>
                 <ion-select
@@ -243,9 +279,7 @@
               size-lg="12"
               size-xl="12"
             > -->
-              <ion-button class="btn-sesion">Actualizar Datos</ion-button>
-              <ion-button class="btn-sesion">Actualizar Contraseña</ion-button>
-              <ion-button class="btn-sesion">Eliminar cuenta</ion-button>
+              <ion-button expand="block"  class="btn-sesion" (click)="toggleEdit()">{{ isEditing ? 'Guardar Cambios' : 'Actualizar Datos' }}</ion-button>
             </ion-row>
           </ion-row>
 
@@ -342,15 +376,18 @@
             <p>TIENDA</p>
           </a>
         </ion-col>
-  
+
         <!-- Carrito -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
+          <a
+            routerLink="/carrito"
+            style="text-decoration: none; color: inherit"
+          >
             <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
             <p>CARRITO</p>
           </a>
         </ion-col>
-  
+
         <!-- Perfil -->
         <ion-col class="footer-item" size="4">
           <a routerLink="/perfil" style="text-decoration: none; color: inherit">

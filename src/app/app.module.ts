@@ -14,14 +14,15 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './component/menu/menu.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { authInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
+import { authInterceptor } from './interceptors/auth.interceptor';
+import { PhotoModalComponent } from './component/photo-modal/photo-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent],
+  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent, PhotoModalComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
-    provideHttpClient(withInterceptors([authInterceptorInterceptor])),
+    provideHttpClient(withInterceptors([authInterceptor])),
   ],
   bootstrap: [AppComponent]
 })

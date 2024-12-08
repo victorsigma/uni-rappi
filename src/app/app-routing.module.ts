@@ -84,11 +84,15 @@ const routes: Routes = [
     data: { roles: ['user', 'admin', 'vendedor']}
   },
   {
+    path: 'creditos',
+    loadChildren: () => import('./pages/creditos/creditos.module').then( m => m.CreditosPageModule),
+  },
+  {
     path: 'form-establecimientos',
     loadChildren: () => import('./pages/form-establecimientos/form-establecimientos.module').then( m => m.FormEstablecimientosPageModule)
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
-];
+]
 
 @NgModule({
   imports: [
