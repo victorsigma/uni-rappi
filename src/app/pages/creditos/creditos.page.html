@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Créditos</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home"
+        ><ion-icon name="chevron-back-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+    <!-- Computadora -->
+    <ion-grid class="creditos_pnt">
+      <ion-row class="creditos_pnt__fila">
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content">
+              <h5>Carga Mini</h5>
+              <p>$ 50.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content">
+              <h5>Carga Básica</h5>
+              <p>$ 100.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content">
+              <h5>Carga Estandar</h5>
+              <p>$ 250.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Celular -->
+    <ion-grid class="creditos_tlf">
+      <ion-row class="creditos_tlf__fila">
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content">
+            <h5>Carga Mini</h5>
+            <p>$ 50.00</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content">
+            <h5>Carga Básica</h5>
+            <p>$ 100.00</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content">
+            <h5>Carga Estandar</h5>
+            <p>$ 250.00</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

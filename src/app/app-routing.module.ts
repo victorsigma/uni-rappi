@@ -83,6 +83,10 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { roles: ['user', 'admin', 'vendedor']}
   },
+  {
+    path: 'creditos',
+    loadChildren: () => import('./pages/creditos/creditos.module').then( m => m.CreditosPageModule),
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
   
 ];

@@ -57,6 +57,7 @@
             </ion-col>
             <ion-col style="display: flex; justify-content: center">
               <ion-icon
+                routerLink="/creditos"
                 style="color: black; font-size: 24px"
                 name="wallet-outline"
               ></ion-icon>
@@ -64,6 +65,48 @@
           </ion-row>
         </ion-grid>
       </ion-item-divider>
+
+      <!-- Creditos -->
+      <ion-item-divider
+        style="
+          font-family: 'Serif';
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: black;
+          text-align: center;
+          --background: none;
+          margin: 2rem 0 1rem;
+          border-radius: 0.5rem;
+        "
+      >
+        <ion-label>Créditos</ion-label>
+      </ion-item-divider>
+
+      <a routerLink="/creditos" style="text-decoration: none; color: inherit">
+        <ion-item
+          button
+          style="
+            --background: none;
+            font-family: 'Serif';
+            color: #5a4032;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+          "
+        >
+          <ion-icon
+            slot="start"
+            name="cash-outline"
+            style="font-size: 1.5rem; color: #5a4032"
+          ></ion-icon>
+          <ion-label>
+            <ion-text style="font-weight: bold; font-size: 1.2rem">
+              Obten Créditos
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </a>
+
+
       <!-- Secciones -->
       <ion-item-divider
         style="
