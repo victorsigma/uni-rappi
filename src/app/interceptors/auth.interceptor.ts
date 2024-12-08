@@ -4,7 +4,7 @@ import { from } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { TokenService } from '../services/token/token.service';
 
-export const authInterceptorInterceptor: HttpInterceptorFn = (req, next) => {
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenService = inject(TokenService);
 
   // Obtener el token de forma asíncrona
