@@ -14,6 +14,8 @@ export class PhotoModalComponent {
 
   selectedFile: File | null = null;
   isLoading: boolean = false; // Estado de carga
+  
+  label: string = 'Seleccionar archivo'; // Texto inicial del label
 
   constructor(
     private modalController: ModalController,
@@ -22,6 +24,16 @@ export class PhotoModalComponent {
 
   onFileChange(event: any) {
     this.selectedFile = event.target.files[0];
+
+    const input = event.target as HTMLInputElement;
+
+    if (input?.files && input.files.length > 0) {
+      // Actualiza el texto del label con el nombre del archivo
+      this.label = input.files[0].name;
+    } else {
+      // Si no hay archivo seleccionado, muestra el texto predeterminado
+      this.label = 'Seleccionar archivo';
+    }
   }
 
   async uploadPhoto() {
@@ -60,4 +72,5 @@ export class PhotoModalComponent {
   closeModal() {
     this.modalController.dismiss({ photoUrl: this.photoUrl || null });
   }
+
 }
