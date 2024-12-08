@@ -1,3 +1,27 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="light"> </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none" style="padding: 0.5rem">
+      <ion-item-divider
+        button
+        style="
+          --background: #d8d8d7;
+          font-family: 'Serif';
+          color: #5a4032;
+          margin-bottom: 2rem;
+          border-radius: 0.5rem;
+          margin-top: 3rem;
+        "
+      >
+        <ion-label>
+          <ion-text style="font-weight: bold; font-size: 1.2rem"
+            >User Nº 1</ion-text
+          >
+          <br />
+          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
+        </ion-label>
 
         <ion-icon
           name="person-outline"
@@ -33,7 +57,6 @@
             </ion-col>
             <ion-col style="display: flex; justify-content: center">
               <ion-icon
-                routerLink="/creditos"
                 style="color: black; font-size: 24px"
                 name="wallet-outline"
               ></ion-icon>
@@ -41,48 +64,6 @@
           </ion-row>
         </ion-grid>
       </ion-item-divider>
-
-      <!-- Creditos -->
-      <ion-item-divider
-        style="
-          font-family: 'Serif';
-          font-size: 1.4rem;
-          font-weight: bold;
-          color: black;
-          text-align: center;
-          --background: none;
-          margin: 2rem 0 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-label>Créditos</ion-label>
-      </ion-item-divider>
-
-      <a routerLink="/creditos" style="text-decoration: none; color: inherit">
-        <ion-item
-          button
-          style="
-            --background: none;
-            font-family: 'Serif';
-            color: #5a4032;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-          "
-        >
-          <ion-icon
-            slot="start"
-            name="cash-outline"
-            style="font-size: 1.5rem; color: #5a4032"
-          ></ion-icon>
-          <ion-label>
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Obten Créditos
-            </ion-text>
-          </ion-label>
-        </ion-item>
-      </a>
-
-
       <!-- Secciones -->
       <ion-item-divider
         style="
@@ -261,106 +242,94 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="main-content" [fullscreen]="true" class="ion-padding">
-  <ion-searchbar
-    placeholder="Buscar..."
-    style="--background: #ffffff; border-radius: 2rem; --color: #5a4032"
-  ></ion-searchbar>
-  <ion-grid>
-    <ion-row class="banner-container" align-items-center>
-      <!-- Imagen -->
-      <ion-col size-xs="12" size-md="6" size-lg="6" class="image-col">
-        <img
-          src="assets/img/hamburgesa.png"
-          alt="Hamburguesa"
-          class="burger-image"
-        />
-      </ion-col>
-
-      <!-- Contenido -->
-      <ion-col size-xs="12" size-md="6" size-lg="6" class="content-col">
-        <div class="content">
-          <h2>MIRA NUESTRO<br />NUEVO CONTENIDO</h2>
-          <a
-            href="/plantilla-tienda"
-            style="text-decoration: none; color: inherit"
+<ion-content class="form-estable" id="main-content" [fullscreen]="true">
+  <ion-row>
+    <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+      <ion-card class="custom-header-establecimiento">
+        <ion-card-header>
+          <ion-card-title style="color: black"
+            >Agregar Establecimientos</ion-card-title
           >
-            <button class="cta-button">Click Aquí</button>
-          </a>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row class="menu-items">
-      <ion-col size="3" class="menu-item" routerLink="/pizzas">
-        <img src="assets/img/pizza.png" alt="Pizza" />
-        <p>Pizza</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/dulceria">
-        <img src="assets/img/menu-de-snacks.png" alt="Botanas" />
-        <p>Botanas</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/tacos">
-        <img src="assets/img/taco.png" alt="Tacos" />
-        <p>Tacos</p>
-      </ion-col>
-      <ion-col size="3" class="menu-item" routerLink="/hamburguesas">
-        <img src="assets/img/hamburguesa.png" alt="Hamburguesa" />
-        <p>Hamburguesa</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <!-- Card 1 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Pide y come rápido</h2>
-          <div class="image-container">
-            <img src="assets/img/Pizzas.png" alt="Pizza" />
-            <div class="overlay">
-              <p>Listo Para Comer</p>
-            </div>
-          </div>
-        </div>
-      </ion-col>
+        </ion-card-header>
+        <ion-card-content>
+          <form (ngSubmit)="submitForm()">
+            <ion-item>
+              <ion-label position="floating"
+                >Nombre del Establecimiento</ion-label
+              >
+              <ion-input
+                [(ngModel)]="nuevoEstablecimiento.nombre"
+                name="nombre"
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Encargado</ion-label>
+              <ion-input
+                [(ngModel)]="nuevoEstablecimiento.encargado"
+                name="encargado"
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-button expand="block" class="custom-button" type="submit"
+              >Guardar</ion-button
+            >
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col
+      size-xs="12"
+      size-sm="12"
+      size-md="12"
+      size-lg="6"
+      size-xl="6"
+      style="margin-top: 0.8rem"
+    >
+      <ion-card class="custom-header-establecimiento">
+        <ion-card-header>
+          <ion-card-title style="color: black">Establecimientos</ion-card-title>
+        </ion-card-header>
+      </ion-card>
 
-      <!-- Card 2 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Buen sazón</h2>
-          <div class="image-container">
-            <img src="assets/img/Tacos.png" alt="Tacos" />
-            <div class="overlay">
-              <p>Prueba comida con buen sazón</p>
-            </div>
-          </div>
-        </div>
-      </ion-col>
-
-      <!-- Card 3 -->
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <div class="card">
-          <h2>Compras Anteriores</h2>
-          <div class="image-container">
-            <img src="assets/img/Quesadillas.png" alt="Quesadillas" />
-            <div class="overlay">
-              <p>Comida que ya has probado</p>
-            </div>
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <div
+        *ngFor="let establecimiento of establecimientos"
+        class="card-container"
+      >
+        <ion-card class="custom-header-establecimiento">
+          <ion-card-content>
+            <ion-label>
+              <h2>{{ establecimiento.nombre }}</h2>
+              <p>Encargado: {{ establecimiento.encargado }}</p>
+            </ion-label>
+            <ion-buttons class="action-buttons">
+              <ion-button
+                color="primary"
+                (click)="editarEstablecimiento(establecimiento)"
+              >
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button
+                color="danger"
+                (click)="eliminarEstablecimiento(establecimiento)"
+              >
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar class="custom-footer">
     <ion-grid>
       <ion-row>
         <!-- Tienda -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/home" style="text-decoration: none; color: inherit">
+          <a href="/tienda" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
@@ -368,7 +337,7 @@
 
         <!-- Carrito -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
+          <a href="/carrito" style="text-decoration: none; color: inherit">
             <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
             <p>CARRITO</p>
           </a>
@@ -376,7 +345,7 @@
 
         <!-- Perfil -->
         <ion-col class="footer-item" size="4">
-          <a routerLink="/perfil" style="text-decoration: none; color: inherit">
+          <a href="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>
           </a>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
-import { TokenService } from 'src/app/services/token.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { TokenService } from 'src/app/services/token/token.service';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
