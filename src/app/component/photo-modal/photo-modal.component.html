@@ -16,28 +16,10 @@
     class="loading-spinner"
   ></ion-spinner>
 
-  <!-- <div *ngIf="!isLoading">
-    <div *ngIf="photoUrl" class="current-photo-container">
-      <img [src]="photoUrl" alt="Foto actual" class="current-photo" />
-      <ion-button expand="block" (click)="removePhoto()"
-        >Eliminar foto</ion-button
-      >
-    </div>
-
-    <ion-item>
-      <ion-label>Seleccionar imagen</ion-label>
-      <input type="file" (change)="onFileChange($event)" />
-    </ion-item>
-
-    <ion-button expand="block" (click)="uploadPhoto()">Guardar</ion-button>
-  </div> -->
-
-  <div class="editar">
+  <div class="editar" *ngIf="!isLoading">
     <div class="editar__foto">
-      <img [src]="photoUrl" alt="Foto actual" class="current-photo" />
-
+      <img  *ngIf="photoUrl" [src]="photoUrl" alt="Foto actual" class="current-photo" />
       <div class="editar__foto__seleccionar_foto_nueva">
-        <!-- <input type="file" (change)="onFileChange($event)" /> -->
         <div class="custom-file">
           <label for="fileInput" id="fileLabel">{{ label }}</label>
           <input
