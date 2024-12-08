@@ -33,7 +33,7 @@
                 slot="start"
                 style="font-size: 30px; margin-right: 5px"
               ></ion-icon>
-              <ion-card-subtitle>{{ nombre }} {{ apellido }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ username }}</ion-card-subtitle>
             </ion-item>
           </ion-card-header>
 
@@ -120,12 +120,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Nombre(s)</ion-card-content>
+              <ion-card-content> Nombre Usuario</ion-card-content>
               <ion-item>
                 <ion-input
                   type="text"
                   placeholder=""
-                  [(ngModel)]="nombre"
+                  [readonly]="!isEditing"
+                  [(ngModel)]="username"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -136,12 +137,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Apellido(s)</ion-card-content>
+              <ion-card-content> Nombre Completo</ion-card-content>
               <ion-item>
                 <ion-input
                   type="text"
                   placeholder=""
-                  [(ngModel)]="apellido"
+                  [readonly]="!isEditing"
+                  [(ngModel)]="fullName"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -156,8 +158,9 @@
               <ion-item>
                 <ion-input
                   type="email"
-                  placeholder="example@gmail.com"
-                  [(ngModel)]="correo"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="email"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -168,12 +171,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Celular </ion-card-content>
+              <ion-card-content> Numero de Control </ion-card-content>
               <ion-item>
                 <ion-input
                   type="tel"
-                  placeholder="418 177 19 08"
-                  [(ngModel)]="celular"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="controlNumber"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -184,48 +188,51 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content>
-                <label for="fechaNacimiento">Fecha de nacimiento</label>
-                <ion-item lines="none">
-                  <ion-icon
-                    slot="end"
-                    name="calendar"
-                    style="font-size: 20px"
-                    (click)="openDatePicker()"
-                  ></ion-icon>
-                </ion-item>
-
-                <ion-datetime
-                  id="fechaNacimiento"
-                  display-format="DD/MM/YYYY"
-                  min="1900-01-01"
-                  max="2024-12-31"
-                  [(ngModel)]="fechaNacimiento"
-                  (ionChange)="openDatePicker()"
-                  style="display: none"
-                >
-                </ion-datetime>
-              </ion-card-content>
-            </ion-col>
-            <ion-col
-              size-xs="12"
-              size-sm="6"
-              size-md="6"
-              size-lg="6"
-              size-xl="6"
-            >
-              <ion-card-content>
-                <label for="genero">Género</label>
+            <ion-card-content> Grupo </ion-card-content>
+            <ion-item>
+              <ion-input
+                type="email"
+                placeholder=""
+                [readonly]="!isEditing"
+                [(ngModel)]="group"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col
+            size-xs="12"
+            size-sm="6"
+            size-md="6"
+            size-lg="6"
+            size-xl="6"
+          >
+          <ion-card-content> Telefono </ion-card-content>
+          <ion-item>
+            <ion-input
+              type="email"
+              placeholder=""
+              [readonly]="!isEditing"
+              [(ngModel)]="group"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-row
+          size-xs="6"
+          size-sm="6"
+          size-md="6"
+          size-lg="6"
+          size-xl="6"
+        >
+              <!-- <ion-card-content>
+                <label for="genero">ROL</label>
                 <ion-select
-                  id="genero"
-                  placeholder="Selecciona tu género"
-                  [(ngModel)]="genero"
+                  id="rol"
+                  placeholder="Selecciona tu ROL"
+                  [(ngModel)]="rol"
                 >
-                  <ion-select-option value="masculino"
-                    >Hombre</ion-select-option
+                  <ion-select-option value="Administrador"
+                    >Administrador</ion-select-option
                   >
-                  <ion-select-option value="femenino">Mujer</ion-select-option>
-                  <ion-select-option value="otro">Otro</ion-select-option>
+                  <ion-select-option value="vendedor">Vendedor</ion-select-option>
                 </ion-select>
               </ion-card-content>
             </ion-col>
@@ -235,11 +242,11 @@
               size-md="12"
               size-lg="12"
               size-xl="12"
-            >
-              <ion-button class="btn-sesion">Cerrar sesión</ion-button>
-              <ion-button class="btn-sesion">Guardar datos</ion-button>
+            > -->
+              <ion-button class="btn-sesion">Actualizar Datos</ion-button>
+              <ion-button class="btn-sesion">Actualizar Contraseña</ion-button>
               <ion-button class="btn-sesion">Eliminar cuenta</ion-button>
-            </ion-col>
+            </ion-row>
           </ion-row>
 
           <ion-row *ngIf="selectedOption === 'pagos'">

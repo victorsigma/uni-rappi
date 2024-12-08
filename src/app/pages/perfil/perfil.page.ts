@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { TokenService } from 'src/app/services/token/token.service';
+import { UsersService } from 'src/app/services/users/users.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-perfil',
@@ -7,52 +11,81 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
   selectedOption: string = 'informacion';
-  nombre: string = '';
-  apellido: string = '';
-  correo: string = '';
-  celular: string = '';
-  fechaNacimiento: string = '';
-  genero: string = '';
+  isEditing: boolean = false;
 
-  constructor() {}
+  userId: number = 0;
+  username: string = '';
+  email: string = '';
+  controlNumber: string = '';
+  group: string = '';
+  fullName: string = '';
 
-  // Función para manejar la opción seleccionada
-  setSelectedOption(option: string) {
-    this.selectedOption = option;
-  }
+  constructor(
+    private usersService: UsersService,
+    private tokenService: TokenService,
+    private alertController: AlertController
+  ) {}
 
   ngOnInit() {
-    // Cargar los datos guardados en el localStorage al iniciar
-    this.loadData();
+    this.loadUserData();
   }
 
-  openDatePicker() {
-    const datePicker = document.querySelector('ion-datetime');
-    if (datePicker) {
-      // Verifica si el calendario está visible
-      const isVisible = datePicker.style.display === 'block';
-      // Alterna la visibilidad
-      datePicker.style.display = isVisible ? 'none' : 'block';
+  async loadUserData() {
+    try {
+      this.userId = (await this.tokenService.getUserId()) || 0;
+
+      if (!this.userId) {
+        throw new Error('Usuario no autenticado');
+      }
+
+      const user: any = await firstValueFrom(this.usersService.getUserById(this.userId));
+
+      console.log(user);
+
+      this.username = user.data.username;
+      this.email = user.data.email;
+      this.controlNumber = user.data.controlNumber;
+      this.group = user.data.group;
+      this.fullName = user.data.fullName;
+    } catch (error) {
+      console.error('Error al cargar los datos del usuario:', error);
+      this.showAlert('Error', 'No se pudo cargar la información del usuario');
     }
   }
 
-  // Método para guardar los datos en localStorage
-  saveData() {
-    localStorage.setItem('nombre', this.nombre);
-    localStorage.setItem('apellido', this.apellido);
-    localStorage.setItem('correo', this.correo);
-    localStorage.setItem('celular', this.celular);
-    localStorage.setItem('fechaNacimiento', this.fechaNacimiento);
-    localStorage.setItem('genero', this.genero);
+  toggleEdit() {
+    this.isEditing = !this.isEditing;
   }
 
-  // Método para cargar los datos desde localStorage
-  loadData() {
-    this.nombre = localStorage.getItem('nombre') || '';
-    this.apellido = localStorage.getItem('apellido') || '';
-    this.correo = localStorage.getItem('correo') || '';
-    this.celular = localStorage.getItem('celular') || '';
-    this.fechaNacimiento = localStorage.getItem('fechaNacimiento') || '';
-    this.genero = localStorage.getItem('genero') || '';
+  async saveChanges() {
+    const updatedData = {
+      username: this.username,
+      email: this.email,
+      controlNumber: this.controlNumber,
+      group: this.group,
+      fullName: this.fullName,
+    };
+
+    try {
+      await firstValueFrom(this.usersService.updateUser(this.userId, updatedData));
+      this.isEditing = false;
+      this.showAlert('Éxito', 'Datos actualizados correctamente');
+    } catch (error) {
+      console.error('Error al actualizar los datos:', error);
+      this.showAlert('Error', 'No se pudo actualizar la información');
+    }
+  }
+
+  async showAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
+  setSelectedOption(option: string) {
+    this.selectedOption = option;
   }
 }
