@@ -39,7 +39,7 @@ export class IniciarSesionPage implements OnInit {
         },
         error: async (err) => {
           console.error('Error al iniciar sesión:', err);
-          const errorMessage = err.error?.message || 'Ocurrió un error al iniciar sesión';
+          const errorMessage = err.error.message || 'Ocurrió un error al iniciar sesión';
           await this.showAlert('Error', errorMessage);
         },
       });

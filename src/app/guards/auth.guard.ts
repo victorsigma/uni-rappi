@@ -9,7 +9,7 @@ export const authGuard: CanActivateFn = async (route, state) => {
 
   // Verificar si el usuario está logueado
   if (!(await tokenService.isLogged()) || !(await tokenService.isTokenValid())) {
-    return router.createUrlTree(['/iniciar-sesion']);
+    return router.createUrlTree(['/first-screen']);
   }
 
   // Obtener roles permitidos de la ruta
