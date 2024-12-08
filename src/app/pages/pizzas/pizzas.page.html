@@ -25,9 +25,9 @@
         size-xl="3"
       >
         <ion-card>
-          <img class="image-container" [src]="pizza.image" [alt]="pizza.name" />
+          <img class="image-container" [src]="pizza.photoUrl" [alt]="pizza.productname" />
           <ion-card-header>
-            <ion-card-title>{{ pizza.name }} ${{ pizza.price }}</ion-card-title>
+            <ion-card-title>{{ pizza.productname }} ${{ pizza.price }}</ion-card-title>
             <ion-button class="Agregar" (click)="presentAlert(pizza)"
               >Agregar</ion-button
             >

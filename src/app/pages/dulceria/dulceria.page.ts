@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-dulceria',
@@ -34,30 +35,26 @@ export class DulceriaPage implements OnInit {
     }
   ];
 
-  dulces = [
-    { "name": "Coca-Cola", "price": 15 },
-    { "name": "Sprite", "price": 15 },
-    { "name": "Pepsi", "price": 15 },
-    { "name": "Sabritas Clásicas", "price": 10 },
-    { "name": "Chester", "price": 12 },
-    { "name": "Ruffles", "price": 13 },
-    { "name": "Galletas Oreo", "price": 20 },
-    { "name": "Galletas Emperador", "price": 18 },
-    { "name": "Galletas Marías", "price": 10 },
-    { "name": "Chocolate Hershey's", "price": 25 },
-    { "name": "Chocolate Snickers", "price": 20 },
-    { "name": "Chocolate M&M's", "price": 18 },
-    { "name": "Chocolate Mars", "price": 22 }
-  ];
+  dulces: Array<{ "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
 
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private productosService: ProductosService) {}
 
-  ngOnInit() {}
-
-  async presentAlert(dulceria: { name: string; price: number; }) {
+  ngOnInit() {
+    this.productosService.buscarPorMenu(8).subscribe({
+      complete: () => { },
+      next: (value: any) => {
+        console.log(value);
+        this.dulces = value.data
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    })
+  }
+  async presentAlert(dulceria: { productname: string; price: number; photoUrl: string, stock: string }) {
     const alert = await this.alertController.create({
-      header: `${dulceria.name}`,
+      header: `${dulceria.productname}`,
       subHeader: `Precio: $${dulceria.price}`,
       message: '¿Cuántas unidades deseas agregar?',
       inputs: [
@@ -67,6 +64,7 @@ export class DulceriaPage implements OnInit {
           placeholder: 'Cantidad',
           min: 1, // Mínimo 1 para que no sea negativo
           value: 1, // Valor por defecto
+          max: dulceria.stock
         },
       ],
       buttons: [
@@ -82,7 +80,7 @@ export class DulceriaPage implements OnInit {
           handler: (data) => {
             const quantity = data.quantity;
             if (quantity > 0) {
-              console.log(`Se agregaron ${quantity} unidades de la quesadilla ${dulceria.name}`);
+              console.log(`Se agregaron ${quantity} unidades de la quesadilla ${dulceria.productname}`);
             } else {
               console.log('Cantidad inválida');
             }
