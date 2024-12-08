@@ -1,7 +1,7 @@
 import { CanActivateFn } from '@angular/router';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenService } from '../services/token.service';
+import { TokenService } from '../services/token/token.service';
 
 export const authGuard: CanActivateFn = async (route, state) => {
   const tokenService = inject(TokenService);
@@ -21,6 +21,5 @@ export const authGuard: CanActivateFn = async (route, state) => {
     return router.createUrlTree(['/home']); // Redirigir si no tiene permiso
   }
 
-  // Permitir el acceso si cumple con las condiciones
   return true;
 };
