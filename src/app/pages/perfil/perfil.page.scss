@@ -1,41 +1,60 @@
 /*Css footer*/
 .custom-footer {
-    --background: #1BC8AD;
+  --background: #1bc8ad;
 }
 
 .footer-item {
-    text-align: center;
+  text-align: center;
 }
 
 .footer-icon {
-    font-size: 2rem;
-    color: rgb(8, 8, 8);
-    margin-bottom: 5px;
+  font-size: 2rem;
+  color: rgb(8, 8, 8);
+  margin-bottom: 5px;
 }
 
 .footer-item p {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin: 0;
-    color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0;
+  color: rgb(0, 0, 0);
 }
 
 .list-md {
-    background-color: #d8d8d7;
+  background-color: #d8d8d7;
 }
 
-.btn-sesion{
-    margin-left: 0.8rem;
-    color: white;
-    --background: transparent;
+.btn-sesion {
+  margin-left: 0.8rem;
+  color: white;
+  --background: transparent;
 }
 
 .card-pagos {
-    height: 10rem;
-    background: #d8d8d7;
+  height: 10rem;
+  background: #d8d8d7;
 }
 
 .card-pagos ion-card-title {
-    margin-top: 4rem;
-    --color: black;
+  margin-top: 4rem;
+  --color: black;
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Indica que es interactivo */
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.default-icon {
+  font-size: 100px;
+  color: gray;
 }
