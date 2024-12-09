@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 import { TokenService } from '../token/token.service';
 import { CartProduct, CartProductView, ShoppingCartResponse } from 'src/app/models/apiModels';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class CarService {
   // Observable que otros componentes pueden suscribirse
   totalPrice$ = this.totalPrice.asObservable();
 
-  private apiUrl = "http://localhost:3000/"
+  private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient, private tokenService: TokenService) {
     this.loadCarFromLocalStorage();
   }
@@ -26,7 +27,7 @@ export class CarService {
     this.saveCarToLocalStorage();
 
     const user = await this.tokenService.getUserId();
-    const observable$ = this.http.patch(`${this.apiUrl}shopping-cart/${user}`, { product });
+    const observable$ = this.http.patch(`${this.apiUrl}/shopping-cart/${user}`, { product });
 
     return firstValueFrom(observable$);
   }
@@ -34,7 +35,7 @@ export class CarService {
   // Obtener los productos del carrito
   async getCarItems(): Promise<Observable<any>> {
     const user = await this.tokenService.getUserId()
-    const observable$ = this.http.get<ShoppingCartResponse>(`${this.apiUrl}shopping-cart/${user}`);
+    const observable$ = this.http.get<ShoppingCartResponse>(`${this.apiUrl}/shopping-cart/${user}`);
 
     observable$.subscribe({
       complete: () => { },
@@ -62,7 +63,7 @@ export class CarService {
         id: product.id,
       }
     }
-    const observable$ = this.http.delete<ShoppingCartResponse>(`${this.apiUrl}shopping-cart/${user}`, { body: producto },);
+    const observable$ = this.http.delete<ShoppingCartResponse>(`${this.apiUrl}/shopping-cart/${user}`, { body: producto },);
     if (index > -1) {
       this.carItems.splice(index, 1); // Elimina el producto del array
     }
