@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { Browser } from '@capacitor/browser';
+import { AlertController, LoadingController, Platform } from '@ionic/angular';
 import { PaymentsService } from 'src/app/services/payments/payments.service';
 import { TokenService } from 'src/app/services/token/token.service';
 
@@ -10,15 +11,15 @@ import { TokenService } from 'src/app/services/token/token.service';
   styleUrls: ['./creditos.page.scss'],
 })
 export class CreditosPage implements OnInit {
-
   constructor(
     private paymentsService: PaymentsService,
     private tokenService: TokenService,
     private loadingController: LoadingController,
     private alertController: AlertController,
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    private platform: Platform
+  ) {}
 
   ngOnInit() {
     this.checkTransactionStatus();
@@ -32,6 +33,8 @@ export class CreditosPage implements OnInit {
     } else if (status === 'cancel') {
       this.showAlert('Cancelado', 'La recarga fue cancelada.');
     }
+
+    // Limpia los parámetros de la URL
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: {},
@@ -54,8 +57,20 @@ export class CreditosPage implements OnInit {
 
     try {
       const response = await this.paymentsService.createPaymentIntent(amount, userId);
+
       if (response?.data?.url) {
-        window.location.href = response.data.url;
+        if (this.platform.is('hybrid')) {
+          // En móvil, abrir con Capacitor Browser
+          await Browser.open({ url: response.data.url });
+
+          // Manejo del evento `browserFinished`
+          Browser.addListener('browserFinished', async () => {
+            await this.handleBrowserFinished();
+          });
+        } else {
+          // En web, redirigir con window.location.href
+          window.location.href = response.data.url;
+        }
       } else {
         this.showAlert('Error', 'No se pudo procesar el pago.');
       }
@@ -65,6 +80,12 @@ export class CreditosPage implements OnInit {
     } finally {
       loading.dismiss();
     }
+  }
+
+  private async handleBrowserFinished() {
+    // Aquí se puede manejar la redirección si el usuario cierra el navegador móvil
+    this.router.navigate(['/creditos']);
+    this.checkTransactionStatus();
   }
 
   async showAlert(header: string, message: string) {
