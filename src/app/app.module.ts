@@ -16,9 +16,10 @@ import { MenuComponent } from './component/menu/menu.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { authInterceptor } from './interceptors/auth.interceptor';
 import { PhotoModalComponent } from './component/photo-modal/photo-modal.component';
+import { PaymentsModalComponent } from './component/payments-modal/payments-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent, PhotoModalComponent],
+  declarations: [AppComponent, ModalProductComponent, CarritoComponent, MenuComponent, PhotoModalComponent, PaymentsModalComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
