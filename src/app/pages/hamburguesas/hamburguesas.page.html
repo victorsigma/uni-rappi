@@ -43,6 +43,7 @@
       size-xl="3"
     >
       <ion-card>
+        <img class="image-container" [src]="item.photoUrl" [alt]="item.productname" />
         <ion-card-header>
           <ion-card-title>{{ item.productname }} ${{ item.price }}</ion-card-title>
           <ion-button class="Agregar" (click)="presentAlert(item)"
