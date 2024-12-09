@@ -1,3 +1,8 @@
+ion-menu, ion-header, ion-content {
+    --background: white;
+    --color: #0000
+}
+
 .list-md {
     background-color: #d8d8d7;
 }
@@ -38,4 +43,8 @@
     --background: none;
     margin: 2rem 0 1rem;
     border-radius: 0.5rem;
+}
+
+.icon {
+    cursor: pointer;
 }

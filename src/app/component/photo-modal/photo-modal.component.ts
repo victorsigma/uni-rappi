@@ -15,7 +15,7 @@ export class PhotoModalComponent {
   selectedFile: File | null = null;
   isLoading: boolean = false; // Estado de carga
   
-  label: string = 'Seleccionar archivo'; // Texto inicial del label
+  label: string = 'Seleccionar Fotografía'; // Texto inicial del label
 
   constructor(
     private modalController: ModalController,
@@ -32,7 +32,7 @@ export class PhotoModalComponent {
       this.label = input.files[0].name;
     } else {
       // Si no hay archivo seleccionado, muestra el texto predeterminado
-      this.label = 'Seleccionar archivo';
+      this.label = 'Seleccionar Fotografía';
     }
   }
 

@@ -1,3 +1,13 @@
+ion-toolbar,
+ion-content, ion-card, on-card-title, ion-item, ion-icon{
+  --background: #ffffff; /* Cambia el color de fondo */
+  --color: #000000; /* Cambia el color del texto */
+}
+
+p {
+  color: #000000;
+}
+
 /*Css footer*/
 .custom-footer {
   --background: #1bc8ad;
@@ -27,7 +37,18 @@
 .btn-sesion {
   margin-left: 0.8rem;
   color: white;
+  --border-radius: 250px;
   --background: transparent;
+  font-weight: 600;
+}
+
+.btn-contrasena {
+  --background: #077D6B;
+}
+
+.btn-guardar {
+  --background: #077D6B;
+  margin-bottom: 5%;
 }
 
 .card-pagos {
@@ -59,6 +80,20 @@
   color: gray;
 }
 
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+ion-button {
+}
+
+.btn-eliminar {
+  --background: rgb(201, 9, 9);
+
 .btn-style {
   cursor: pointer;
+
 }
