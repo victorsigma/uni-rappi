@@ -1,3 +1,10 @@
+ion-toolbar,
+ion-content{
+  --background: #ffffff; /* Cambia el color de fondo */
+  --color: #000000; /* Cambia el color del texto */
+}
+
+
 .container {
     margin: 5% 7%;
 }
@@ -77,8 +84,4 @@
     -webkit-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
     -moz-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.35);
     padding: 0 10px;
-}
-
-@media (max-width: 768px) {
-
 }

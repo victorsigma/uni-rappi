@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { TokenService } from 'src/app/services/token/token.service';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -14,6 +16,7 @@ export class IniciarSesionPage implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private tokenService: TokenService,
     private navCtrl: NavController,
     private alertController: AlertController 
   ) { }
@@ -30,13 +33,13 @@ export class IniciarSesionPage implements OnInit {
       .login({ usernameOrEmail: this.usernameOrEmail, password: this.password })
       .subscribe({
         next: async (response) => {
-          localStorage.setItem('token', response.access_token);
+         this.tokenService.setToken(response.data.access_token);
           await this.showAlert('Éxito', 'Inicio de sesión exitoso');
           this.navCtrl.navigateForward('/home');
         },
         error: async (err) => {
           console.error('Error al iniciar sesión:', err);
-          const errorMessage = err.error?.message || 'Ocurrió un error al iniciar sesión';
+          const errorMessage = err.error.message || 'Ocurrió un error al iniciar sesión';
           await this.showAlert('Error', errorMessage);
         },
       });

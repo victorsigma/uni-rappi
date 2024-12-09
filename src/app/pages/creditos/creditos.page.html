@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-navbar">
+    <!-- Botón de menú en el lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first">
+        <ion-icon
+          class="icono-menu"
+          slot="icon-only"
+          name="menu-outline"
+        ></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons id="icono_carrito" slot="end">
+      <ion-button (click)="openCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+    <!-- Computadora -->
+    <ion-grid class="creditos_pnt">
+      <ion-row class="creditos_pnt__fila">
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content" (click)="purchaseCredits(100)">
+              <h5>Carga Mini</h5>
+              <p>$ 100.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content" (click)="purchaseCredits(300)">
+              <h5>Carga Básica</h5>
+              <p>$ 300.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size-xs="4" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+          <ion-card class="creditos_pnt__fila__tarjeta" tabindex="0">
+            <ion-card-content class="creditos_pnt__fila__tarjeta__content" (click)="purchaseCredits(500)">
+              <h5>Carga Estandar</h5>
+              <p>$ 500.00</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Celular -->
+    <ion-grid class="creditos_tlf">
+      <ion-row class="creditos_tlf__fila">
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content" (click)="purchaseCredits(100)">
+            <h5>Carga Mini</h5>
+            <p>$ 100.00</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content" (click)="purchaseCredits(300)">
+            <h5>Carga Básica</h5>
+            <p>$ 300.00</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="creditos_tlf__fila__tarjeta" tabindex="0">
+          <ion-card-content class="creditos_tlf__fila__tarjeta__content" (click)="purchaseCredits(500)">
+            <h5>Carga Estandar</h5>
+            <p>$ 500.00</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-grid>
+      <ion-row>
+        <!-- Tienda -->
+        <ion-col class="footer-item" size="6">
+          <a href="/home" style="text-decoration: none; color: inherit">
+            <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
+            <p>TIENDA</p>
+          </a>
+        </ion-col>
+
+        <!-- Perfil -->
+        <ion-col class="footer-item" size="6">
+          <a href="/perfil" style="text-decoration: none; color: inherit">
+            <ion-icon name="person-outline" class="footer-icon"></ion-icon>
+            <p>PERFIL</p>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

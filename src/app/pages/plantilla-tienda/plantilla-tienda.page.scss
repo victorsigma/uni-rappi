@@ -1,3 +1,17 @@
+ion-toolbar,
+ion-content, ion-card, on-card-title, ion-item, ion-icon, ion-searchbar{
+  --background: #ffffff; /* Cambia el color de fondo */
+  --color: #000000; /* Cambia el color del texto */
+}
+
+ion-card-title p {
+    color: #000000;
+}
+
+ion-card-subtitle p {
+    color: #0d35e4;
+}
+
 .container {
     margin: 0 auto; /* Centra el contenido */
     max-width: 1600px; /* Limita el ancho máximo */
@@ -40,4 +54,26 @@
 
 .tienda__productos ion-col ion-card {
     cursor: pointer;
+}
+
+
+.custom-footer {
+    --background: #1BC8AD;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-icon {
+    font-size: 2rem;
+    color: rgb(8, 8, 8);
+    margin-bottom: 5px;
+}
+
+.footer-item p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(0, 0, 0);
 }

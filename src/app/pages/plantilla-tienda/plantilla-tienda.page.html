@@ -263,10 +263,10 @@
           <ion-card (click)="openModal(pizza)">
             <ion-card-header>
               <img src="{{ pizza.imagen }}" alt="{{ pizza.productDescription }}">
-              <ion-card-title>{{ pizza.productname }}</ion-card-title>
-              <ion-card-subtitle>${{ pizza.price }}</ion-card-subtitle>
+              <ion-card-title><p> {{ pizza.productname }} </p></ion-card-title>
+              <ion-card-subtitle><p> ${{ pizza.price }} </p></ion-card-subtitle>
             </ion-card-header>
-      
+            
             <ion-card-content>
               {{ pizza.productDescription }}
             </ion-card-content>
@@ -274,6 +274,40 @@
 
         </ion-col>
       </ion-row>
+
     </ion-grid>
   </div>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-grid>
+      <ion-row>
+        <!-- Tienda -->
+        <ion-col class="footer-item" size="4">
+          <a routerLink="/home" style="text-decoration: none; color: inherit">
+            <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
+            <p>TIENDA</p>
+          </a>
+        </ion-col>
+  
+        <!-- Carrito -->
+        <ion-col class="footer-item" size="4">
+          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
+            <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
+            <p>CARRITO</p>
+          </a>
+        </ion-col>
+  
+        <!-- Perfil -->
+        <ion-col class="footer-item" size="4">
+          <a routerLink="/perfil" style="text-decoration: none; color: inherit">
+            <ion-icon name="person-outline" class="footer-icon"></ion-icon>
+            <p>PERFIL</p>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

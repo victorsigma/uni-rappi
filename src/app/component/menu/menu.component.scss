@@ -1,0 +1,54 @@
+ion-toolbar {
+    --background: #1bc8ad;
+    --color: #0000
+}
+
+.list-md {
+    background-color: #d8d8d7;
+}
+
+.divider {
+    background: #d8d8d7;
+    font-family: "Serif";
+    color: #5a4032;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    margin-top: 3rem;
+}
+
+.item-menu {
+    --background: none;
+    font-family: "Serif";
+    color: #5a4032;
+    margin-bottom: 1.1rem;
+    border-radius: 0.5rem;
+}
+
+.text-button {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #5a4032;
+}
+
+.selections {
+    font-family: 'Serif';
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    --background: none;
+    margin: 2rem 0 1rem;
+    border-radius: 0.5rem;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.footer-menu{
+    height: 4.9rem;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { AlertController, NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -23,7 +23,8 @@ export class RegistrarUsuarioPage implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private alertController: AlertController 
   ) {}
 
   ngOnInit() {}
@@ -35,18 +36,30 @@ export class RegistrarUsuarioPage implements OnInit {
 
   alternarRepetirContrasena() {
     console.log(this.mostrarContrasena);
-    this.mostrarContrasena = !this.mostrarContrasena; // Alterna el valor entre true y false
+    this.mostrarRepetirContrasena = !this.mostrarRepetirContrasena; // Alterna el valor entre true y false
   }
 
-  register() {
+  async register() {
     this.authService.register(this.user).subscribe({
-      next: (response) => {
+      next: async (response) => {
         console.log('Usuario registrado exitosamente:', response);
-        this.navCtrl.navigateForward('/iniciar-sesion');
+        await this.showAlert('Éxito', response.message);
+        this.navCtrl.navigateForward('/first-screen');
       },
-      error: (err) => {
+      error: async (err) => {
         console.error('Error al registrar usuario:', err);
+        await this.showAlert('Éxito', err.error.message);
       },
     });
+  }
+
+  async showAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 }

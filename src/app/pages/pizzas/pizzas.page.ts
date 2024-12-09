@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
+import { ProductosService } from '../../services/productos.service';
+import { CarritoComponent } from 'src/app/component/carrito/carrito.component';
+import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
   selector: 'app-pizzas',
@@ -7,57 +10,28 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./pizzas.page.scss'],
 })
 export class PizzasPage implements OnInit {
-  pizzas=[
-     {
-    "name": "Peperoni Rebanada",
-    "price": 30,
-    "image": "https://t3.ftcdn.net/jpg/08/26/33/92/240_F_826339292_ZNp4KLx6AnOAV94hk5nVjvhC29cTOPy8.jpg"
-  },
-  {
-    "name": "Hawaiana Rebanada",
-    "price": 25,
-    "image": "https://t3.ftcdn.net/jpg/03/09/77/10/240_F_309771080_keIjKJp5zZsw5JpeO8zQYpB291CQSTG2.jpg"
-  },
-  {
-    "name": "Mexicana Rebanada",
-    "price": 45,
-    "image": "https://t4.ftcdn.net/jpg/08/06/68/75/240_F_806687509_DRjUqxRLppjAlK1EhavCTn7vZ4LWCdq2.jpg"
-  },
-  {
-    "name": "Especial Rebanada",
-    "price": 50,
-    "image": "https://t3.ftcdn.net/jpg/08/21/58/62/240_F_821586215_VpTfBKOBesRst1dG9JNuI8qg2WSYE5rr.jpg"
-  },
-  {
-    "name": "Peperoni Grande",
-    "price": 150,
-    "image": "https://t3.ftcdn.net/jpg/09/73/32/76/240_F_973327667_AWjgsHOkc5G56YR7NWbl8c2eNEvJdr0K.jpg"
-  },
-  {
-    "name": "Hawaiana Grande",
-    "price": 180,
-    "image": "https://t4.ftcdn.net/jpg/09/68/31/73/240_F_968317325_ACIdXpaRYANAPGftjocRviHsO01NISWO.jpg"
-  },
-  {
-    "name": "Mexicana Grande",
-    "price": 200,
-    "image": "https://t4.ftcdn.net/jpg/08/55/23/91/240_F_855239197_u38vQ2xsceacYyYdsJxuuSRsvYELtX8E.jpg"
-  },
-  {
-    "name": "Especial Grande",
-    "price": 220,
-    "image": "https://t4.ftcdn.net/jpg/07/42/56/91/240_F_742569122_3or3jW78QZ2tuqHu5jX5B7Njbf524d50.jpg"
-  }
-]
+  pizzas: Array<{ "id": number, "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
+
+  constructor(private alertController: AlertController, private productosService: ProductosService,
+    private modalController: ModalController,
+    private carService: CarService) { }
 
   ngOnInit() {
+    this.productosService.buscarPorMenu(2).subscribe({
+      complete: () => { },
+      next: (value: any) => {
+        console.log(value);
+        this.pizzas = value.data
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    })
   }
 
-  constructor(private alertController: AlertController) {}
-
-  async presentAlert(pizza: { name: string; price: number; image: string }) {
+  async presentAlert(pizza: { id: number, productname: string; price: number; photoUrl: string, stock: string }) {
     const alert = await this.alertController.create({
-      header: `Pizza ${pizza.name}`,
+      header: `Pizza ${pizza.productname}`,
       subHeader: `Precio: $${pizza.price}`,
       message: '¿Cuántas unidades deseas agregar?',
       inputs: [
@@ -66,7 +40,8 @@ export class PizzasPage implements OnInit {
           type: 'number',
           placeholder: 'Cantidad',
           min: 1, // Mínimo 1 para que no
-          value: 1 // Valor por defecto
+          value: 1, // Valor por defecto,
+          max: pizza.stock
         },
       ],
       buttons: [
@@ -79,10 +54,12 @@ export class PizzasPage implements OnInit {
         },
         {
           text: 'Agregar',
-          handler: (data) => {
+          handler: async (data) => {
             const quantity = data.quantity;
             if (quantity > 0) {
-              console.log(`Se agregaron ${quantity} unidades de la pizza ${pizza.name}`);
+              console.log(`Se agregaron ${quantity} unidades de la pizza ${pizza.productname}`);
+
+              (await this.carService.addToCar({ id: pizza.id, quantity }));
             } else {
               console.log('Cantidad inválida');
             }
@@ -94,4 +71,16 @@ export class PizzasPage implements OnInit {
     await alert.present();
   }
 
+  async openCarrito() {
+    const modal = await this.modalController.create({
+      component: CarritoComponent, // No especificamos un componente aquí
+      cssClass: 'full-modal', // Estilos personalizados (opcional)
+      backdropDismiss: true,  // Permitir cerrar al hacer clic fuera
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
+    });
+
+    await modal.present();
+  }
 }

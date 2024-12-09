@@ -1,223 +1,3 @@
-<ion-menu side="start" menuId="first" contentId="main-content">
-  <ion-header>
-    <ion-toolbar color="light"> </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list lines="none" style="padding: 0.5rem">
-      <ion-item-divider
-        button
-        style="
-          --background: #d8d8d7;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 2rem;
-          border-radius: 0.5rem;
-          margin-top: 3rem;
-        "
-      >
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem"
-            >User Nº 1</ion-text
-          >
-          <br />
-          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
-        </ion-label>
-
-        <ion-icon
-          name="person-outline"
-          slot="end"
-          style="font-size: 24px; color: black"
-        ></ion-icon>
-      </ion-item-divider>
-      <ion-item-divider
-        button
-        style="
-          --background: #d8d8d7;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 2rem;
-          border-radius: 0.5rem;
-          margin-top: 3rem;
-        "
-        ><ion-grid
-          style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032"
-        >
-          <ion-row>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="settings-outline"
-              ></ion-icon>
-            </ion-col>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="contrast-outline"
-              ></ion-icon>
-            </ion-col>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon
-                style="color: black; font-size: 24px"
-                name="wallet-outline"
-              ></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item-divider>
-      <!-- Secciones -->
-      <ion-item-divider
-        style="
-          font-family: 'Serif';
-          font-size: 1.4rem;
-          font-weight: bold;
-          color: black;
-          text-align: center;
-          --background: none;
-          margin: 2rem 0 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-label>Secciones</ion-label>
-      </ion-item-divider>
-      <!-- Sección Pizza -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="pizza-outline"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <a href="/pizzas" style="text-decoration: none; color: inherit">
-            <ion-text style="font-weight: bold; font-size: 1.2rem">
-              Pizza
-            </ion-text>
-          </a>
-        </ion-label>
-      </ion-item>
-
-      <!-- Sección Gorditas, Quesadillas y Platillos -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="restaurant-outline"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem">
-            Gorditas, Quesadillas y Platillos
-          </ion-text>
-        </ion-label>
-      </ion-item>
-
-      <!-- Sección Bebidas y Postres -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="ice-cream-outline"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem">
-            Bebidas y Postres
-          </ion-text>
-        </ion-label>
-      </ion-item>
-      <!-- Sección Tacos y tortas -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="fast-food-outline"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem">
-            Tacos y Tortas
-          </ion-text>
-        </ion-label>
-      </ion-item>
-      <!-- Hmaburgesas -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="fast-food-sharp"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem">
-            Hamburguesas
-          </ion-text>
-        </ion-label>
-      </ion-item>
-      <!-- Dulces -->
-      <ion-item
-        button
-        style="
-          --background: none;
-          font-family: 'Serif';
-          color: #5a4032;
-          margin-bottom: 1rem;
-          border-radius: 0.5rem;
-        "
-      >
-        <ion-icon
-          slot="start"
-          name="happy-outline"
-          style="font-size: 1.5rem; color: #5a4032"
-        ></ion-icon>
-        <ion-label>
-          <ion-text style="font-weight: bold; font-size: 1.2rem">
-            Dulceria
-          </ion-text>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 <ion-header [translucent]="true">
   <ion-toolbar class="custom-navbar">
     <!-- Botón de menú en el lado izquierdo -->
@@ -239,7 +19,7 @@
       <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="4" size-xl="4">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Mi perfil</ion-card-title>
+            <ion-card-title><p>Mi perfil</p></ion-card-title>
             <ion-item
               lines="none"
               style="
@@ -253,7 +33,7 @@
                 slot="start"
                 style="font-size: 30px; margin-right: 5px"
               ></ion-icon>
-              <ion-card-subtitle>{{ nombre }} {{ apellido }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ username }}</ion-card-subtitle>
             </ion-item>
           </ion-card-header>
 
@@ -265,13 +45,16 @@
               size-lg="12"
               size-xl="12"
             >
+
               <ion-item lines="none" (click)="setSelectedOption('informacion')">
-                <ion-icon
-                  name="settings"
-                  slot="start"
-                  style="font-size: 24px; margin-right: 8px; color: blue"
-                ></ion-icon>
-                Ajuste de cuenta
+                <div class="icon">
+                  <ion-icon
+                    name="settings"
+                    slot="start"
+                    style="font-size: 24px; margin-right: 8px; color: blue"
+                  ></ion-icon>
+                  Ajuste de cuenta
+                </div>
               </ion-item>
             </ion-col>
             <ion-col
@@ -281,17 +64,21 @@
               size-lg="12"
               size-xl="12"
             >
+
               <ion-item lines="none" (click)="setSelectedOption('pagos')">
-                <ion-icon
-                  name="card"
-                  slot="start"
-                  style="
-                    font-size: 24px;
-                    margin-right: 8px;
-                    color: rgba(120, 157, 236, 0.859);
-                  "
-                ></ion-icon>
-                Pagos
+                <div class="icon">
+                  <ion-icon
+                    name="card"
+                    slot="start"
+                    style="
+                      font-size: 24px;
+                      margin-right: 8px;
+                      color: rgba(120, 157, 236, 0.859);
+                    "
+                  ></ion-icon>
+                  Pagos
+                </div>
+
               </ion-item>
             </ion-col>
             <ion-col
@@ -302,16 +89,18 @@
               size-xl="12"
             >
               <ion-item lines="none" (click)="setSelectedOption('ordenes')">
-                <ion-icon
-                  name="clipboard"
-                  slot="start"
-                  style="
-                    font-size: 24px;
-                    margin-right: 8px;
-                    color: rgba(195, 109, 55, 0.759);
-                  "
-                ></ion-icon>
-                Últimas órdenes
+                <div class="icon">
+                  <ion-icon
+                    name="clipboard"
+                    slot="start"
+                    style="
+                      font-size: 24px;
+                      margin-right: 8px;
+                      color: rgba(195, 109, 55, 0.759);
+                    "
+                  ></ion-icon>
+                  Últimas órdenes
+                </div>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -320,12 +109,63 @@
 
       <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="8" size-xl="8">
         <ion-card>
-          <ion-card-header>
-            <ion-card-title>Información de tu cuenta</ion-card-title>
-          </ion-card-header>
-
           <ion-row *ngIf="selectedOption === 'informacion'">
             <!-- La información personal -->
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            >
+              <ion-card-header>
+                <ion-card-title><p> Información de tu cuenta </p></ion-card-title>
+              </ion-card-header>
+            </ion-col>
+
+            <ion-col size="6" class="center">
+              <div (click)="openPhotoModal()" class="photo-container">
+                <ng-container *ngIf="photoUrl; else defaultIcon">
+                  <img
+                    [src]="photoUrl"
+                    class="profile-photo"
+                    alt="Foto de usuario"
+                  />
+                </ng-container>
+                <ng-template #defaultIcon>
+                  <ion-icon
+                    name="person-circle-outline"
+                    class="default-icon"
+                  ></ion-icon>
+                </ng-template>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="5"
+              size-sm="5"
+              size-md="5"
+              size-lg="5"
+              size-xl="5"
+            >
+              <ion-card-content>
+                <strong>Opciones</strong>
+              </ion-card-content>
+              <ion-button
+                expand="block"
+                class="btn-sesion btn-contrasena"
+                (click)="changePassword()"
+              >
+                Actualizar Contraseña
+              </ion-button>
+              <ion-button
+                expand="block"
+                class="btn-sesion btn-eliminar"
+                (click)="deleteAccount()"
+              >
+                Eliminar Cuenta
+              </ion-button>
+            </ion-col>
+
             <ion-col
               size-xs="12"
               size-sm="6"
@@ -333,12 +173,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Nombre(s)</ion-card-content>
+              <ion-card-content> Nombre Usuario</ion-card-content>
               <ion-item>
                 <ion-input
                   type="text"
                   placeholder=""
-                  [(ngModel)]="nombre"
+                  [readonly]="!isEditing"
+                  [(ngModel)]="username"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -349,12 +190,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Apellido(s)</ion-card-content>
+              <ion-card-content> Nombre Completo</ion-card-content>
               <ion-item>
                 <ion-input
                   type="text"
                   placeholder=""
-                  [(ngModel)]="apellido"
+                  [readonly]="!isEditing"
+                  [(ngModel)]="fullName"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -369,8 +211,27 @@
               <ion-item>
                 <ion-input
                   type="email"
-                  placeholder="example@gmail.com"
-                  [(ngModel)]="correo"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="email"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-xl="6"
+            >
+              <ion-card-content> Telefono </ion-card-content>
+              <ion-item>
+                <ion-input
+                  type="email"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="phonenumber"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -381,12 +242,13 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content> Celular </ion-card-content>
+              <ion-card-content> Numero de Control </ion-card-content>
               <ion-item>
                 <ion-input
                   type="tel"
-                  placeholder="418 177 19 08"
-                  [(ngModel)]="celular"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="controlNumber"
                 ></ion-input>
               </ion-item>
             </ion-col>
@@ -397,68 +259,56 @@
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content>
-                <label for="fechaNacimiento">Fecha de nacimiento</label>
-                <ion-item lines="none">
-                  <ion-icon
-                    slot="end"
-                    name="calendar"
-                    style="font-size: 20px"
-                    (click)="openDatePicker()"
-                  ></ion-icon>
-                </ion-item>
-
-                <ion-datetime
-                  id="fechaNacimiento"
-                  display-format="DD/MM/YYYY"
-                  min="1900-01-01"
-                  max="2024-12-31"
-                  [(ngModel)]="fechaNacimiento"
-                  (ionChange)="openDatePicker()"
-                  style="display: none"
-                >
-                </ion-datetime>
-              </ion-card-content>
+              <ion-card-content> Grupo </ion-card-content>
+              <ion-item>
+                <ion-input
+                  type="email"
+                  placeholder=""
+                  [readonly]="!isEditing"
+                  [(ngModel)]="group"
+                ></ion-input>
+              </ion-item>
             </ion-col>
-            <ion-col
-              size-xs="12"
+            <ion-row
+              size-xs="6"
               size-sm="6"
               size-md="6"
               size-lg="6"
               size-xl="6"
             >
-              <ion-card-content>
-                <label for="genero">Género</label>
+              <!-- <ion-card-content>
+                <label for="genero">ROL</label>
                 <ion-select
-                  id="genero"
-                  placeholder="Selecciona tu género"
-                  [(ngModel)]="genero"
+                  id="rol"
+                  placeholder="Selecciona tu ROL"
+                  [(ngModel)]="rol"
                 >
-                  <ion-select-option value="masculino"
-                    >Hombre</ion-select-option
+                  <ion-select-option value="Administrador"
+                    >Administrador</ion-select-option
                   >
-                  <ion-select-option value="femenino">Mujer</ion-select-option>
-                  <ion-select-option value="otro">Otro</ion-select-option>
+                  <ion-select-option value="vendedor">Vendedor</ion-select-option>
                 </ion-select>
               </ion-card-content>
             </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            > -->
+              <ion-button
+                expand="block"
+                class="btn-sesion btn-guardar"
+                (click)="toggleEdit()"
+                >{{ isEditing ? 'Guardar Cambios' : 'Actualizar Datos'
+                }}</ion-button
+              >
+            </ion-row>
           </ion-row>
 
           <ion-row *ngIf="selectedOption === 'pagos'">
             <!--Pagos -->
-            <ion-col size-xs="12">
-              <ion-card-content> Pagos realizados </ion-card-content>
-            </ion-col>
-          </ion-row>
-
-          <ion-row *ngIf="selectedOption === 'ordenes'">
-            <!-- Historial de órdenes -->
-            <ion-col size-xs="12">
-              <ion-card-content> Mis últimos pedidos! </ion-card-content>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
             <ion-col
               size-xs="12"
               size-sm="12"
@@ -466,9 +316,77 @@
               size-lg="12"
               size-xl="12"
             >
-              <ion-button class="btn-sesion">Cerrar sesión</ion-button>
-              <ion-button class="btn-sesion">Guardar datos</ion-button>
-              <ion-button class="btn-sesion">Eliminar cuenta</ion-button>
+              <ion-card-header>
+                <ion-card-title><p>Métodos de pago</p></ion-card-title>
+              </ion-card-header>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="6"
+            >
+              <ion-card class="card-pagos">
+                <ion-card-content>
+                  <ion-icon
+                    name="cash"
+                    slot="start"
+                    style="
+                      font-size: 40px;
+                      margin-right: 8px;
+                      color: rgba(29, 231, 66, 0.859);
+                    "
+                  ></ion-icon>
+                  <ion-card-title>Efectivo </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="6"
+            >
+              <ion-card class="card-pagos">
+                <ion-card-content>
+                  <ion-icon
+                    name="arrow-down-circle"
+                    slot="start"
+                    style="
+                      font-size: 40px;
+                      margin-right: 8px;
+                      color: rgba(29, 231, 66, 0.859);
+                    "
+                  ></ion-icon>
+                  <ion-card-title>Tranferencia bancaria </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="selectedOption === 'ordenes'">
+            <!-- Historial de órdenes -->
+            <ion-col
+              size-xs="12"
+              size-sm="12"
+              size-md="12"
+              size-lg="12"
+              size-xl="12"
+            >
+              <ion-card-header>
+                <ion-card-title><p> Ultimos pedidos </p></ion-card-title>
+              </ion-card-header>
+            </ion-col>
+            <ion-col size-xs="12" *ngIf="ordenes.length" >
+              <ion-card-content style="display: flex; justify-content: space-between;" *ngFor="let orden of ordenes">
+                <div slot="start">Orden Id: {{orden.id}}</div>
+                <div slot="end">Total: {{orden.balance}}</div>
+              </ion-card-content>
+            </ion-col>
+            <ion-col size-xs="12" *ngIf="!ordenes.length">
+              <ion-card-content> No tienes ningún pedido </ion-card-content>
             </ion-col>
           </ion-row>
         </ion-card>
@@ -482,23 +400,15 @@
     <ion-grid>
       <ion-row>
         <!-- Tienda -->
-        <ion-col class="footer-item" size="4">
-          <a href="/tienda" style="text-decoration: none; color: inherit">
+        <ion-col class="footer-item" size="6">
+          <a href="/home" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
         </ion-col>
 
-        <!-- Carrito -->
-        <ion-col class="footer-item" size="4">
-          <a href="/carrito" style="text-decoration: none; color: inherit">
-            <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
-            <p>CARRITO</p>
-          </a>
-        </ion-col>
-
         <!-- Perfil -->
-        <ion-col class="footer-item" size="4">
+        <ion-col class="footer-item" size="6">
           <a href="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>

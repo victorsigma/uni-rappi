@@ -1,3 +1,9 @@
+ion-toolbar{
+    --background: #1bc8ad;
+    --color: #000000; /* Cambia el color del texto */
+  }
+  
+
 #registro {
     height: 100%;
     width: 100%;
@@ -18,12 +24,13 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 60%;
     overflow: auto; /* Desplazamiento automático */
     -ms-overflow-style: none; /* IE y Edge: Oculta la barra */
     scrollbar-width: none; /* Firefox: Oculta la barra */
 }
+
 
 #registro__formulario::-webkit-scrollbar {
     display: none; /* Chrome, Safari: Oculta la barra */
@@ -80,8 +87,9 @@ ion-item {
     --color-activated: white;
     --color-focused: white;
     --color-hover: white;
-    --background: #E86411;
-}
+    --background: #e86411;
+    font-size: 120%;
+  }
 
 @media (max-width: 768px) {
     #registro{
@@ -112,7 +120,6 @@ ion-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: white;
         width: 100%;
         z-index: 5;
     }
