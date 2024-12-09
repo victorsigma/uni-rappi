@@ -1,11 +1,6 @@
-ion-toolbar,
-ion-content, ion-card, on-card-title, ion-item, ion-icon{
-  --background: #ffffff; /* Cambia el color de fondo */
+ion-toolbar{
+  --background: #1bc8ad;
   --color: #000000; /* Cambia el color del texto */
-}
-
-p {
-  color: #000000;
 }
 
 /*Css footer*/
@@ -86,14 +81,10 @@ p {
   align-items: center;
 }
 
-
-ion-button {
-}
-
 .btn-eliminar {
   --background: rgb(201, 9, 9);
+}
 
 .btn-style {
   cursor: pointer;
-
 }

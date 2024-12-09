@@ -26,10 +26,10 @@
 </ion-header>
 
 <ion-content id="main-content" [fullscreen]="true" class="ion-padding">
-  <ion-searchbar
+  <!-- <ion-searchbar
     placeholder="Buscar..."
     style="--background: #ffffff; border-radius: 2rem; --color: #5a4032"
-  ></ion-searchbar>
+  ></ion-searchbar> -->
   <ion-grid>
     <ion-row class="banner-container" align-items-center>
       <!-- Imagen -->
@@ -54,19 +54,19 @@
     <ion-row class="menu-items">
       <ion-col size="3" class="menu-item" routerLink="/pizzas">
         <img src="assets/img/pizza.png" alt="Pizza" />
-        <p>Pizza</p>
+        <ion-text>Pizza</ion-text>
       </ion-col>
       <ion-col size="3" class="menu-item" routerLink="/dulceria">
         <img src="assets/img/menu-de-snacks.png" alt="Botanas" />
-        <p>Botanas</p>
+        <ion-text>Botanas</ion-text>
       </ion-col>
       <ion-col size="3" class="menu-item" routerLink="/tacos">
         <img src="assets/img/taco.png" alt="Tacos" />
-        <p>Tacos</p>
+        <ion-text>Tacos</ion-text>
       </ion-col>
       <ion-col size="3" class="menu-item" routerLink="/hamburguesas">
         <img src="assets/img/hamburguesa.png" alt="Hamburguesa" />
-        <p>Hamburguesa</p>
+        <ion-text>Hamburguesa</ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -75,12 +75,9 @@
       <!-- Card 1 -->
       <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
         <div class="card">
-          <h2>Pide y come rápido</h2>
+            <h2 class="ion-text-center ion-text-primary">Pide y come rápido</h2>
           <div class="image-container">
             <img src="assets/img/Pizzas.png" alt="Pizza" />
-            <div class="overlay">
-              <p>Listo Para Comer</p>
-            </div>
           </div>
         </div>
       </ion-col>
@@ -88,12 +85,9 @@
       <!-- Card 2 -->
       <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
         <div class="card">
-          <h2>Buen sazón</h2>
+          <h2 class="ion-text-center ion-text-primary">Buen sazón</h2>
           <div class="image-container">
             <img src="assets/img/Tacos.png" alt="Tacos" />
-            <div class="overlay">
-              <p>Prueba comida con buen sazón</p>
-            </div>
           </div>
         </div>
       </ion-col>
@@ -101,12 +95,9 @@
       <!-- Card 3 -->
       <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
         <div class="card">
-          <h2>Compras Anteriores</h2>
+          <h2 class="ion-text-center ion-text-primary">Compras Anteriores</h2>
           <div class="image-container">
             <img src="assets/img/Quesadillas.png" alt="Quesadillas" />
-            <div class="overlay">
-              <p>Comida que ya has probado</p>
-            </div>
           </div>
         </div>
       </ion-col>
@@ -118,23 +109,15 @@
     <ion-grid>
       <ion-row>
         <!-- Tienda -->
-        <ion-col class="footer-item" size="4">
+        <ion-col class="footer-item" size="6">
           <a href="/home" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
         </ion-col>
 
-        <!-- Carrito -->
-        <ion-col class="footer-item" size="4">
-          <a href="/carrito" style="text-decoration: none; color: inherit">
-            <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
-            <p>CARRITO</p>
-          </a>
-        </ion-col>
-
         <!-- Perfil -->
-        <ion-col class="footer-item" size="4">
+        <ion-col class="footer-item" size="6">
           <a href="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>

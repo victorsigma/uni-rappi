@@ -17,24 +17,6 @@
 <ion-content id="main-content" [fullscreen]="true">
   <ion-row>
     <ion-col
-      *ngFor="let item of menuprincipal"
-      size-xs="6"
-      size-sm="6"
-      size-md="6"
-      size-lg="4"
-      size-xl="4"
-    >
-      <ion-card>
-        <img class="image-container" [src]="item.image" [alt]="item.name" />
-        <ion-card-header>
-          <ion-card-title>{{ item.name }}</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-item-divider> </ion-item-divider>
-  <ion-row>
-    <ion-col
       *ngFor="let item of menu"
       size-xs="6"
       size-sm="6"
@@ -46,7 +28,7 @@
         <img class="image-container" [src]="item.photoUrl" [alt]="item.productname" />
         <ion-card-header>
           <ion-card-title>{{ item.productname }} ${{ item.price }}</ion-card-title>
-          <ion-button class="Agregar" (click)="presentAlert(item)"
+          <ion-button class="btnes" (click)="presentAlert(item)"
             >Agregar</ion-button
           >
         </ion-card-header>
@@ -60,24 +42,16 @@
     <ion-grid>
       <ion-row>
         <!-- Tienda -->
-        <ion-col class="footer-item" size="4">
-          <a routerLink="/home" style="text-decoration: none; color: inherit">
+        <ion-col class="footer-item" size="6">
+          <a href="/home" style="text-decoration: none; color: inherit">
             <ion-icon name="storefront-outline" class="footer-icon"></ion-icon>
             <p>TIENDA</p>
           </a>
         </ion-col>
-  
-        <!-- Carrito -->
-        <ion-col class="footer-item" size="4">
-          <a routerLink="/carrito" style="text-decoration: none; color: inherit">
-            <ion-icon name="cart-outline" class="footer-icon"></ion-icon>
-            <p>CARRITO</p>
-          </a>
-        </ion-col>
-  
+
         <!-- Perfil -->
-        <ion-col class="footer-item" size="4">
-          <a routerLink="/perfil" style="text-decoration: none; color: inherit">
+        <ion-col class="footer-item" size="6">
+          <a href="/perfil" style="text-decoration: none; color: inherit">
             <ion-icon name="person-outline" class="footer-icon"></ion-icon>
             <p>PERFIL</p>
           </a>

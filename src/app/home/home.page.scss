@@ -1,11 +1,6 @@
-ion-toolbar {
-  --background: #ffffff; /* Cambia el color de fondo */
-  --color: #000000;      /* Cambia el color del texto */
-}
-
-ion-content {
-  --background: #ffffff; /* Cambia el color de fondo */
-  --color: #000000;      /* Cambia el color del texto */
+ion-toolbar{
+  --background: #1bc8ad;
+  --color: #000000; /* Cambia el color del texto */
 }
 
 
@@ -165,7 +160,6 @@ ion-content {
   padding: 10px;
   margin: 0;
   background-color: transparent;
-  color: white;
   text-align: left;
 }
 
@@ -189,7 +183,6 @@ ion-content {
   width: 100%;
   padding: 10px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  color: white;
   font-size: 1rem;
   text-align: left;
 }

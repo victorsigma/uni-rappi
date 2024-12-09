@@ -1,20 +1,6 @@
-ion-toolbar,
-ion-grid,
-ion-row,
-ion-col,
-ion-card,
-ion-content,
-ion-item-divider {
-  --background: #ffffff; /* Cambia el color de fondo */
+ion-toolbar{
+  --background: #1bc8ad;
   --color: #000000; /* Cambia el color del texto */
-}
-
-ion-card-title {
-  --color: #000000;
-}
-
-#contenido {
-  background-color: white !important;
 }
 
 #first_screen {
@@ -85,7 +71,6 @@ ion-card-title {
 }
 
 #first_screen__background_white__texto {
-  color: black;
   margin-top: 25%;
 }
 
@@ -116,7 +101,8 @@ ion-card-title {
   --padding-end: 2rem;
   --padding-start: 2rem;
   z-index: 3;
-  font-size: 120%;
+  width: 25rem;
+  height: 3.125rem;
 }
 
 .button-registrarse {
@@ -125,12 +111,14 @@ ion-card-title {
   --color-focused: white;
   --color-hover: white;
   --background: #e86411;
-  
-  font-size: 120%;
+  z-index: 3;
+  width: 25rem;
+  height: 3.125rem;
 }
 
 #first_screen__background_white__botones__pantalla_pequenia {
   display: none;
+  width: 50%;
 }
 
 @media (max-width: 768px) {
@@ -142,8 +130,8 @@ ion-card-title {
       -50%,
       -50%
     ); /* Ajusta la figura para que esté centrada */
-    width: 120%; /* Ancho de la figura, se adapta de forma responsiva */
-    height: 60%; /* Altura de la figura, también ajustable */
+    width: 50%;
+    height: 3.125rem;
     background-color: white; /* Color blanco de la figura */
     border-radius: 450px; /* Esquinas redondeadas, opcional */
   }
@@ -182,3 +170,5 @@ ion-card-title {
     display: none;
   }
 }
+
+

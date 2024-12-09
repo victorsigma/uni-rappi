@@ -11,21 +11,6 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class TacosPage implements OnInit {
 
-  menu = [
-    {
-      "name": "Tacos",
-      "image": "https://t4.ftcdn.net/jpg/09/66/73/59/240_F_966735986_TkgN0ueuhZoNcBBUQlsSNsMpZK5DoAu1.jpg"
-    },
-    {
-      "name": "Tortas",
-      "image": "https://t4.ftcdn.net/jpg/03/66/34/87/240_F_366348718_qqoTPPaYh5hEfdUDG8kZUHoE91XETYdA.jpg"
-    },
-    {
-      "name": "Quesadillas",
-      "image": "https://t3.ftcdn.net/jpg/05/97/08/60/240_F_597086001_dSkCB93ZHgVZV5RrITJjswqmmxcwwG4G.jpg"
-    }
-  ];
-
   tacos: Array<{ "id": number, "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
 
   constructor(private alertController: AlertController, private productosService: ProductosService, private modalController: ModalController,

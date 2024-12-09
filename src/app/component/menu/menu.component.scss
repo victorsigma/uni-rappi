@@ -1,5 +1,5 @@
-ion-menu, ion-header, ion-content {
-    --background: white;
+ion-toolbar {
+    --background: #1bc8ad;
     --color: #0000
 }
 
@@ -20,7 +20,7 @@ ion-menu, ion-header, ion-content {
     --background: none;
     font-family: "Serif";
     color: #5a4032;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
     border-radius: 0.5rem;
 }
 
@@ -47,4 +47,8 @@ ion-menu, ion-header, ion-content {
 
 .icon {
     cursor: pointer;
+}
+
+.footer-menu{
+    height: 4.9rem;
 }
