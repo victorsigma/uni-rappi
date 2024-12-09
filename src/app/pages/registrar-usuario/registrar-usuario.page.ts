@@ -36,7 +36,7 @@ export class RegistrarUsuarioPage implements OnInit {
 
   alternarRepetirContrasena() {
     console.log(this.mostrarContrasena);
-    this.mostrarContrasena = !this.mostrarContrasena; // Alterna el valor entre true y false
+    this.mostrarRepetirContrasena = !this.mostrarRepetirContrasena; // Alterna el valor entre true y false
   }
 
   async register() {

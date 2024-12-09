@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
-import { AlertController, LoadingController, Platform } from '@ionic/angular';
+import { AlertController, LoadingController, Platform, ModalController } from '@ionic/angular';
+import { CarritoComponent } from 'src/app/component/carrito/carrito.component';
 import { PaymentsService } from 'src/app/services/payments/payments.service';
 import { TokenService } from 'src/app/services/token/token.service';
 
@@ -18,7 +19,8 @@ export class CreditosPage implements OnInit {
     private alertController: AlertController,
     private route: ActivatedRoute,
     private router: Router,
-    private platform: Platform
+    private platform: Platform,
+    private modalController: ModalController
   ) {}
 
   ngOnInit() {
@@ -95,6 +97,19 @@ export class CreditosPage implements OnInit {
       buttons: ['OK'],
     });
     await alert.present();
+  }
+
+  async openCarrito() {
+    const modal = await this.modalController.create({
+      component: CarritoComponent, // No especificamos un componente aquí
+      cssClass: 'full-modal', // Estilos personalizados (opcional)
+      backdropDismiss: true,  // Permitir cerrar al hacer clic fuera
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
+    });
+
+    await modal.present();
   }
 
 }

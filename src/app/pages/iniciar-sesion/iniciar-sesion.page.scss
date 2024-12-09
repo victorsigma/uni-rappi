@@ -1,163 +1,204 @@
+ion-toolbar {
+  --background: #ffffff; /* Cambia el color de fondo */
+  --color: #000000; /* Cambia el color del texto */
+}
+
+ion-alert {
+  --color: #000000; /* Cambia el color del texto principal */
+  --subtitle-color: #000000; /* Cambia el color del subtítulo */
+  --message-color: #000000; /* Cambia el color del mensaje */
+  --background: #fff; /* Cambia el color del mensaje */
+}
+
 #inicio_de_sesion {
-    height: 100%;
-    width: 100%;
-    display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 #inicio_de_sesion__fondo_verde {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #0FCAAD, #016959);
-    height: 100%;
-    width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #0fcaad, #016959);
+  height: 100%;
+  width: 40%;
 }
 
 #inicio_de_sesion__formulario {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    height: 100%;
-    width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  background-color: white;
+  color: #000000;
+}
+
+ion-input {
+  --color: #000000; /* Cambia el color del texto */
+}
+
+ion-input {
+  --placeholder-color: #000000; /* Cambia el color del placeholder */
+}
+
+ion-content {
+  --background: #ffffff;
+  --color: #000;
 }
 
 #inicio_de_sesion__formulario__titulo {
-    margin-top: 7.8rem;
-    font-size: clamp(2rem, 2.90vw, 6rem);
-    font-weight: 600;
+  margin-top: 7.8rem;
+  font-size: clamp(2rem, 2.9vw, 6rem);
+  font-weight: 600;
 }
 
 #inicio_de_sesion__fondo_verde__figura__logo {
-    height: 25vw;
+  height: 25vw;
 }
 
 #inicio_de_sesion__formulario__form {
-    margin-top: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #inicio_de_sesion__formulario__form ion-input {
-    margin-top: 0.3rem;
+  margin-top: 0.3rem;
 }
 
 #inicio_de_sesion__formulario__form ion-checkbox {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 #inicio_de_sesion__formulario__form ion-button {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-#inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario{
-    display: none;
+#inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario {
+  display: none;
 }
 
 ion-item {
-    --background: transparent;
-    --padding-start: 0;
-    --padding-end: 0;
-    width: 100%;
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  width: 100%;
 }
 
-#inicio_de_sesion__formulario__form ion-item ion-input{
-    background-color: #ffffff00;
+#inicio_de_sesion__formulario__form ion-item ion-input {
+  background-color: #ffffff00;
+}
+
+.button-ingresar {
+  --color: white;
+  --color-activated: white;
+  --color-focused: white;
+  --color-hover: white;
+  --background: #087d6b;
+  --padding-end: 2rem;
+  --padding-start: 2rem;
+  z-index: 3;
+  font-size: 120%;
 }
 
 @media (max-width: 768px) {
-    #inicio_de_sesion{
-        flex-wrap: wrap;
-    }
+  #inicio_de_sesion {
+    flex-wrap: wrap;
+  }
 
-    #inicio_de_sesion__fondo_verde {
-        width: 100%;
-        height: 50%;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+  #inicio_de_sesion__fondo_verde {
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-    #inicio_de_sesion__formulario {
-        display: none;
-    }
+  #inicio_de_sesion__formulario {
+    display: none;
+  }
 
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        margin-top: 14%;
-        width: 100%;
-        height: 100%;
-        z-index: 5;
-    }
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 14%;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
 
-    #adorno_ola {
-        position: relative;
-        width: 100%;
-        background-color: red;
-    }
+  #adorno_ola {
+    position: relative;
+    width: 100%;
+    background-color: red;
+  }
 
-    #adorno_ola_blanco {
-        position: absolute;
-        width: 120%;
-        left: 50%; /* Posición horizontal */
-        transform: translate(-50%, -30%); /* Centra el SVG */
-        z-index: 2;
-    }
+  #adorno_ola_blanco {
+    position: absolute;
+    width: 120%;
+    left: 50%; /* Posición horizontal */
+    transform: translate(-50%, -30%); /* Centra el SVG */
+    z-index: 2;
+  }
 
-    #adorno_ola_cafe {
-        position: absolute;
-        width: 120%;
-        left: 55%; /* Posición horizontal */
-        transform: translate(-50%, -50%); /* Centra el SVG */
-        z-index: 1;
-    }
+  #adorno_ola_cafe {
+    position: absolute;
+    width: 120%;
+    left: 55%; /* Posición horizontal */
+    transform: translate(-50%, -50%); /* Centra el SVG */
+    z-index: 1;
+  }
 
-    #inicio_de_sesion__fondo_verde__figura__logo {
-        margin-top: 1.5rem;
-        height: 45vw;
-        margin-bottom: 2rem;
-    }
+  #inicio_de_sesion__fondo_verde__figura__logo {
+    margin-top: 1.5rem;
+    height: 45vw;
+    margin-bottom: 2rem;
+  }
 
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-input {
-        margin-top: 0.3rem;
-        z-index: 5;
-    }
-    
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-checkbox {
-        z-index: 5;
-        margin-top: 2rem;
-    }
-    
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-button {
-        z-index: 5;
-        margin-top: 2rem;
-    }
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-input {
+    margin-top: 0.3rem;
+    z-index: 5;
+  }
 
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-item {
-        z-index: 5;
-    }
-    
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__titulo {
-        z-index: 5;
-        margin-top: 10vh;
-    }
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form
+    ion-checkbox {
+    z-index: 5;
+    margin-top: 2rem;
+  }
 
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form
+    ion-button {
+    z-index: 5;
+    margin-top: 2rem;
+  }
 
-    #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form__contrasenia {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row ;
-    }
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form ion-item {
+    z-index: 5;
+  }
+
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__titulo {
+    z-index: 5;
+    margin-top: 10vh;
+  }
+
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #inicio_de_sesion__fondo_verde__inicio_de_sesion__formulario__form__contrasenia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
 }

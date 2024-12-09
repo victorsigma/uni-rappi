@@ -1,3 +1,17 @@
+ion-toolbar,
+ion-content, ion-card, on-card-title, ion-item, ion-icon, ion-searchbar{
+  --background: #ffffff; /* Cambia el color de fondo */
+  --color: #000000; /* Cambia el color del texto */
+}
+
+ion-card-title p {
+    color: #000000;
+}
+
+ion-card-subtitle p {
+    color: #0d35e4;
+}
+
 .container {
     margin: 0 auto; /* Centra el contenido */
     max-width: 1600px; /* Limita el ancho máximo */
