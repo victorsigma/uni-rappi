@@ -355,7 +355,13 @@
                 <ion-card-title>Ultimos pedidos</ion-card-title>
               </ion-card-header>
             </ion-col>
-            <ion-col size-xs="12">
+            <ion-col size-xs="12" *ngIf="ordenes.length" >
+              <ion-card-content style="display: flex; justify-content: space-between;" *ngFor="let orden of ordenes">
+                <div slot="start">Orden Id: {{orden.id}}</div>
+                <div slot="end">Total: {{orden.balance}}</div>
+              </ion-card-content>
+            </ion-col>
+            <ion-col size-xs="12" *ngIf="!ordenes.length">
               <ion-card-content> No tienes ningún pedido </ion-card-content>
             </ion-col>
           </ion-row>

@@ -19,4 +19,13 @@ export class SalesService {
 
     return observable$;
   }
+
+  async obtenerOrdenes(): Promise<Observable<ApiResponse<any>>> {
+
+    const user = await this.tokenService.getUserId();
+
+    const observable$ = this.http.get<ApiResponse<any>>(`${this.apiUrl}sales/user/${user}`);
+
+    return observable$;
+  }
 }
