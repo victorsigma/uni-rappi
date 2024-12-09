@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { PaymentsService } from 'src/app/services/payments/payments.service';
 import { TokenService } from 'src/app/services/token/token.service';
@@ -16,7 +16,8 @@ export class CreditosPage implements OnInit {
     private tokenService: TokenService,
     private loadingController: LoadingController,
     private alertController: AlertController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,6 +32,11 @@ export class CreditosPage implements OnInit {
     } else if (status === 'cancel') {
       this.showAlert('Cancelado', 'La recarga fue cancelada.');
     }
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {},
+      replaceUrl: true,
+    });
   }
 
   async purchaseCredits(amount: number) {

@@ -66,8 +66,6 @@ const routes: Routes = [
   {
     path: 'first-screen',
     loadChildren: () => import('./pages/first-screen/first-screen.module').then( m => m.FirstScreenPageModule),
-    canActivate: [authGuard],
-    data: { roles: ['user', 'admin', 'vendedor']}
   },
   {
     path: 'iniciar-sesion',
