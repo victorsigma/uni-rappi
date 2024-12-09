@@ -1,13 +1,6 @@
-ion-toolbar {
-  --background: #ffffff; /* Cambia el color de fondo */
+ion-toolbar{
+  --background: #1bc8ad;
   --color: #000000; /* Cambia el color del texto */
-}
-
-ion-alert {
-  --color: #000000; /* Cambia el color del texto principal */
-  --subtitle-color: #000000; /* Cambia el color del subtítulo */
-  --message-color: #000000; /* Cambia el color del mensaje */
-  --background: #fff; /* Cambia el color del mensaje */
 }
 
 #inicio_de_sesion {
@@ -32,21 +25,6 @@ ion-alert {
   flex-direction: column;
   height: 100%;
   width: 60%;
-  background-color: white;
-  color: #000000;
-}
-
-ion-input {
-  --color: #000000; /* Cambia el color del texto */
-}
-
-ion-input {
-  --placeholder-color: #000000; /* Cambia el color del placeholder */
-}
-
-ion-content {
-  --background: #ffffff;
-  --color: #000;
 }
 
 #inicio_de_sesion__formulario__titulo {
@@ -127,7 +105,6 @@ ion-item {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
     margin-top: 14%;
     width: 100%;
     height: 100%;

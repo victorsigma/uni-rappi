@@ -10,28 +10,6 @@ import { ProductosService } from 'src/app/services/productos.service';
   styleUrls: ['./postres.page.scss'],
 })
 export class PostresPage implements OnInit {
-  menu = [
-    {
-      "name": "Pasteles",
-      "image": "https://t4.ftcdn.net/jpg/09/74/57/55/240_F_974575590_8t5c2410HbHWayDu1kaNaVnvyCEvbr08.jpg"
-    },
-    {
-      "name": "Cafe",
-      "image": "https://t4.ftcdn.net/jpg/10/14/44/55/240_F_1014445518_s9yTdxHxBmIj1YMREhuceGk6iLUht7PS.jpg"
-    },
-    {
-      "name": "Pay",
-      "image": "https://t3.ftcdn.net/jpg/09/21/57/90/240_F_921579061_AmLEPqf4hFkMwQFt7UHfehelBw5YdZUI.jpg"
-    },
-    {
-      "name": "Frappe",
-      "image": "https://t4.ftcdn.net/jpg/02/96/03/41/240_F_296034153_k1R4cnG7DDuioTbJDrCOA8KF0X1yOEpy.jpg"
-    },
-    {
-      "name": "Cheesecake",
-      "image": "https://t3.ftcdn.net/jpg/03/91/03/02/240_F_391030291_AgLpMcp3CPkbsinsCakMknQcHAbraNIb.jpg"
-    }
-  ];
 
   postres: Array<{ "id": number, "productname": string, "price": number, "photoUrl": string, "stock": string }> = []
 

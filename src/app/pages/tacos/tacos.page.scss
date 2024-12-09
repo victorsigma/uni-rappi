@@ -1,12 +1,7 @@
-ion-toolbar, ion-grid, ion-row, ion-col, ion-card, ion-content, ion-item-divider {
-  --background: #ffffff; /* Cambia el color de fondo */
+ion-toolbar{
+  --background: #1bc8ad;
   --color: #000000; /* Cambia el color del texto */
 }
-
-ion-card-title {
-    --color: #000000;
-}
-
 
 .menu-items {
   display: flex;
@@ -117,4 +112,12 @@ ion-card-title {
     width: 100%;
     height: 100px;
   }
+}
+
+.btnes {
+  margin-left: 0.8rem;
+  color: white;
+  --border-radius: 250px;
+  --background: #e86411;
+  font-weight: 600;
 }
