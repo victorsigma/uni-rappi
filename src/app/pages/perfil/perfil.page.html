@@ -3,12 +3,14 @@
     <!-- Botón de menú en el lado izquierdo -->
     <ion-buttons slot="start">
       <ion-menu-button menu="first">
-        <ion-icon
-          class="icono-menu"
-          slot="icon-only"
-          name="menu-outline"
-        ></ion-icon>
+        <ion-icon class="icono-menu" slot="icon-only" name="menu-outline"></ion-icon>
       </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons id="icono_carrito" slot="end">
+      <ion-button (click)="openCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

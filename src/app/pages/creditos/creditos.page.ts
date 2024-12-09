@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Browser } from '@capacitor/browser';
-import { AlertController, LoadingController, Platform, ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { CarritoComponent } from 'src/app/component/carrito/carrito.component';
-import { PaymentsService } from 'src/app/services/payments/payments.service';
+import { PaymentsModalComponent } from 'src/app/component/payments-modal/payments-modal.component';
 import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
@@ -13,81 +11,39 @@ import { TokenService } from 'src/app/services/token/token.service';
 })
 export class CreditosPage implements OnInit {
   constructor(
-    private paymentsService: PaymentsService,
     private tokenService: TokenService,
-    private loadingController: LoadingController,
     private alertController: AlertController,
-    private route: ActivatedRoute,
-    private router: Router,
-    private platform: Platform,
     private modalController: ModalController
   ) {}
 
-  ngOnInit() {
-    this.checkTransactionStatus();
-  }
+  ngOnInit() {}
 
-  async checkTransactionStatus() {
-    const status = this.route.snapshot.queryParamMap.get('status');
-
-    if (status === 'success') {
-      this.showAlert('Éxito', 'Tu recarga fue procesada exitosamente.');
-    } else if (status === 'cancel') {
-      this.showAlert('Cancelado', 'La recarga fue cancelada.');
-    }
-
-    // Limpia los parámetros de la URL
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {},
-      replaceUrl: true,
-    });
-  }
-
-  async purchaseCredits(amount: number) {
+  async openPaymentModal(amount: number) {
     const userId = await this.tokenService.getUserId();
     if (!userId) {
       this.showAlert('Error', 'Usuario no autenticado.');
       return;
     }
 
-    const loading = await this.loadingController.create({
-      message: 'Procesando...',
-      spinner: 'crescent',
+    const modal = await this.modalController.create({
+      component: PaymentsModalComponent,
+      cssClass: 'full-modal', // Estilos personalizados (opcional)
+      backdropDismiss: false,  // Permitir cerrar al hacer clic fuera
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
+      componentProps: { amount }, // Pasa el monto al modal
     });
-    await loading.present();
 
-    try {
-      const response = await this.paymentsService.createPaymentIntent(amount, userId);
+    await modal.present();
 
-      if (response?.data?.url) {
-        if (this.platform.is('hybrid')) {
-          // En móvil, abrir con Capacitor Browser
-          await Browser.open({ url: response.data.url });
-
-          // Manejo del evento `browserFinished`
-          Browser.addListener('browserFinished', async () => {
-            await this.handleBrowserFinished();
-          });
-        } else {
-          // En web, redirigir con window.location.href
-          window.location.href = response.data.url;
-        }
-      } else {
-        this.showAlert('Error', 'No se pudo procesar el pago.');
-      }
-    } catch (error) {
-      this.showAlert('Error', 'No se pudo procesar el pago.');
-      console.error(error);
-    } finally {
-      loading.dismiss();
+    // Escucha la respuesta del modal
+    const { data } = await modal.onDidDismiss();
+    if (data?.status === 'success') {
+      this.showAlert('Éxito', 'Pago procesado exitosamente.');
+    } else if (data?.status === 'cancel') {
+      this.showAlert('Cancelado', 'El pago fue cancelado.');
     }
-  }
-
-  private async handleBrowserFinished() {
-    // Aquí se puede manejar la redirección si el usuario cierra el navegador móvil
-    this.router.navigate(['/creditos']);
-    this.checkTransactionStatus();
   }
 
   async showAlert(header: string, message: string) {

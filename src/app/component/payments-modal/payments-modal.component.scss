@@ -1,0 +1,75 @@
+ion-toolbar {
+    --background: #077D6B;
+  }
+
+  .stripe-card .StripeElement {
+    color: var(--ion-text-color); /* El texto seguirá el color del tema actual */
+  }
+  
+  .stripe-card .StripeElement--invalid {
+    color: var(--ion-color-danger); /* Error color en modo oscuro o claro */
+  }
+  
+  .payment-container {
+    /* Ajustar otros estilos si es necesario */
+    color: var(--ion-text-color); /* Para que los textos generales sigan el color del tema */
+  }
+
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .payment-header {
+    margin-bottom: 20px;
+    
+    .payment-icon {
+      font-size: 3rem;
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  
+    p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+  
+  .payment-body {
+    ion-item {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .stripe-card {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .stripe-errors {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .btnes {
+    margin-left: 0.8rem;
+    color: white;
+    --border-radius: 250px;
+    --background: #e86411;
+    font-weight: 600;
+  }
+  
+  
+  

@@ -5,6 +5,7 @@ import { UsersService } from 'src/app/services/users/users.service';
 import { firstValueFrom } from 'rxjs';
 import { PhotoModalComponent } from 'src/app/component/photo-modal/photo-modal.component';
 import { SalesService } from 'src/app/services/sales.service';
+import { CarritoComponent } from 'src/app/component/carrito/carrito.component';
 
 @Component({
   selector: 'app-perfil',
@@ -217,5 +218,18 @@ export class PerfilPage implements OnInit {
 
   setSelectedOption(option: string) {
     this.selectedOption = option;
+  }
+
+  async openCarrito() {
+    const modal = await this.modalController.create({
+      component: CarritoComponent, // No especificamos un componente aquí
+      cssClass: 'full-modal', // Estilos personalizados (opcional)
+      backdropDismiss: true,  // Permitir cerrar al hacer clic fuera
+      breakpoints: [1], // Puntos de ruptura para el tamaño del modal (10%, 50%, 90%)
+      initialBreakpoint: 1, // Comienza el modal en 50% de la altura
+      handle: false, // Activa el control para arrastrar el modal
+    });
+
+    await modal.present();
   }
 }

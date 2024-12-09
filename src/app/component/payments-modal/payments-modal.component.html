@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Completa tu pago</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="payment-container">
+    <div class="payment-header">
+      <ion-icon name="card-outline" class="payment-icon"></ion-icon>
+      <h2 class="payment-amount">Monto a pagar: ${{ amount }}</h2>
+      <p>Introduce los datos requeridos para finalizar la recarga.</p>
+    </div>
+
+    <form (ngSubmit)="handlePayment()" class="payment-body">
+      <ion-item>
+        <ion-label position="stacked">Nombre del Titular</ion-label>
+        <ion-input placeholder="" [(ngModel)]="cardholderName" name="cardholderName" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo Electrónico</ion-label>
+        <ion-input type="email" placeholder="" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Teléfono</ion-label>
+        <ion-input type="tel" placeholder="" [(ngModel)]="phone" name="phone" required></ion-input>
+      </ion-item>
+
+      <!-- Stripe Card Element -->
+      <div id="card-element" class="stripe-card"></div>
+      <div id="card-errors" class="stripe-errors" role="alert"></div>
+
+      <!-- Términos y condiciones -->
+      <ion-item lines="none">
+        <ion-label>Acepto los términos y condiciones</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="termsAccepted" name="termsAccepted"></ion-checkbox>
+      </ion-item>
+
+      <!-- Botón de pago -->
+        <ion-button expand="block" type="submit" [disabled]="!termsAccepted" class="btnes">
+          Pagar ${{ amount }}
+        </ion-button>
+    </form>
+  </div>
+</ion-content>
