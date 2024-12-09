@@ -31,6 +31,7 @@
     <ion-row>
       <ion-col *ngFor="let dulceria of dulces" size-xs="6" size-sm="6" size-md="6" size-lg="3" size-xl="3">
         <ion-card>
+          <img class="image-container" [src]="dulceria.photoUrl" [alt]="dulceria.productname" />
           <ion-card-header>
             <ion-card-title>{{ dulceria.productname }} ${{ dulceria.price }}</ion-card-title>
             <ion-button class="Agregar" (click)="presentAlert(dulceria)">Agregar</ion-button>

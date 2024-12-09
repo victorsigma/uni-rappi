@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 import { TokenService } from '../token/token.service';
-import { ApiResponse, CartProduct, ShoppingCartResponse } from 'src/app/models/apiModels';
+import { CartProduct, CartProductView, ShoppingCartResponse } from 'src/app/models/apiModels';
 
 @Injectable({
   providedIn: 'root',
@@ -25,8 +25,7 @@ export class CarService {
     console.log('Producto agregado: ', product);
     this.saveCarToLocalStorage();
 
-    const user = await this.tokenService.getUserId()
-    console.log(user);
+    const user = await this.tokenService.getUserId();
     const observable$ = this.http.patch(`${this.apiUrl}shopping-cart/${user}`, { product });
 
     return firstValueFrom(observable$);
@@ -38,27 +37,38 @@ export class CarService {
     const observable$ = this.http.get<ShoppingCartResponse>(`${this.apiUrl}shopping-cart/${user}`);
 
     observable$.subscribe({
-      complete: () => {},
+      complete: () => { },
       next: (value) => {
         this.carItems = value.data.cartProducts.map((element: CartProduct) => {
           return { productname: element.product.productname }
         })
 
-        
-      this.updateTotalPrice(value.data.balance);
+
+        this.updateTotalPrice(value.data.balance);
       },
-      error: () => {}
+      error: () => { }
     })
     return observable$;
   }
 
   // Eliminar un producto específico del carrito
-  removeFromCart(product: any) {
+  async removeFromCart(product: CartProductView): Promise<Observable<ShoppingCartResponse>> {
     const index = this.carItems.indexOf(product);
+
+    const user = await this.tokenService.getUserId();
+
+    const producto = {
+      product: {
+        id: product.id,
+      }
+    }
+    const observable$ = this.http.delete<ShoppingCartResponse>(`${this.apiUrl}shopping-cart/${user}`, { body: producto },);
     if (index > -1) {
       this.carItems.splice(index, 1); // Elimina el producto del array
     }
     //this.updateTotalPrice();
+
+    return observable$;
   }
 
   // Calcular el precio total
