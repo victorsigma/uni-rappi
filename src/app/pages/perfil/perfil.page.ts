@@ -4,6 +4,7 @@ import { TokenService } from 'src/app/services/token/token.service';
 import { UsersService } from 'src/app/services/users/users.service';
 import { firstValueFrom } from 'rxjs';
 import { PhotoModalComponent } from 'src/app/component/photo-modal/photo-modal.component';
+import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
   selector: 'app-perfil',
@@ -23,15 +24,29 @@ export class PerfilPage implements OnInit {
   fullName: string = '';
   photoUrl: string = '';
 
+  ordenes: {id: number, balance: number}[] = [];
+
   constructor(
     private usersService: UsersService,
     private modalController: ModalController,
     private tokenService: TokenService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private saleService: SalesService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.loadUserData();
+    await this.obtenerOrdenes();
+  }
+
+  async obtenerOrdenes() {
+    (await this.saleService.obtenerOrdenes()).subscribe({
+      complete: () => { },
+      next: (value) => {
+        this.ordenes = value.data;
+      },
+      error: (error) => {}
+    })
   }
 
   async loadUserData() {
