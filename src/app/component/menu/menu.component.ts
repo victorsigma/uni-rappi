@@ -26,7 +26,6 @@ export class MenuComponent  implements OnInit {
     this.loadUserData();
   }
 
-
   async loadUserData() {
     const userId = await this.tokenService.getUserId();
     if (userId) {

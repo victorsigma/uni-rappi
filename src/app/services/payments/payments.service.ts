@@ -11,9 +11,9 @@ export class PaymentsService {
 
   constructor(private http: HttpClient) {}
 
-  async createPaymentIntent(amount: number, userId: number): Promise<{ data: { url: string } }> {
+  async createPaymentIntent(amount: number, userId: number): Promise<{ data: { clientSecret: string } }> {
     return firstValueFrom(
-      this.http.post<{ data: { url: string } }>(`${this.apiUrl}/create-intent`, {
+      this.http.post<{ data: { clientSecret: string } }>(`${this.apiUrl}/create-intent`, {
         amount,
         userId,
       })
