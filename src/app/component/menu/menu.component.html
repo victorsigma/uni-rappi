@@ -6,9 +6,9 @@
     <ion-list lines="none" style="padding: 0.5rem">
       <ion-item-divider button class="divider">
         <ion-label>
-          <ion-text class="text-button">User Nº 1</ion-text>
+          <ion-text class="text-button">User {{username}}</ion-text>
           <br />
-          <ion-text color="primary" style="font-size: 1rem">$ 0.00</ion-text>
+          <ion-text color="primary" style="font-size: 1rem">$ {{balance}}</ion-text>
         </ion-label>
 
         <ion-icon name="person-outline" slot="end" style="font-size: 24px; color: black"></ion-icon>
@@ -16,14 +16,14 @@
       <ion-item-divider button class="divider"><ion-grid
           style="--background: #d8d8d7; font-family: 'Serif'; color: #5a4032">
           <ion-row>
-            <ion-col style="display: flex; justify-content: center">
+            <ion-col style="display: flex; justify-content: center" (click)="goToPerfil()">
               <ion-icon style="color: black; font-size: 24px" name="settings-outline"></ion-icon>
             </ion-col>
-            <ion-col style="display: flex; justify-content: center">
-              <ion-icon style="color: black; font-size: 24px" name="contrast-outline"></ion-icon>
-            </ion-col>
-            <ion-col style="display: flex; justify-content: center">
+            <ion-col style="display: flex; justify-content: center" (click)="goToCredits()">
               <ion-icon style="color: black; font-size: 24px" name="wallet-outline"></ion-icon>
+            </ion-col>
+            <ion-col style="display: flex; justify-content: center" (click)="logout()">
+              <ion-icon style="color: black; font-size: 24px" name="log-out-outline"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-grid>

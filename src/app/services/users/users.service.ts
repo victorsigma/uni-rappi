@@ -33,4 +33,8 @@ export class UsersService {
     return this.http.delete(`${this.apiUrl}/users/${userId}/photo`);
   }
 
+  getWallet(userId: number) {
+    return this.http.get(`api/wallet/${userId}`);
+  }
+
 }

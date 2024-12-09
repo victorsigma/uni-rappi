@@ -25,7 +25,6 @@ export class TokenService {
 
   public logOut(): void {
     this.removeToken();
-    location.reload();
   }
 
   public async isLogged(): Promise<boolean> {
